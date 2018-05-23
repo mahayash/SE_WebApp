@@ -1,0 +1,19 @@
+{{!
+< default}} <div class="container">
+	<h1>Welcome</h1>
+	<h1>Student Score</h1>
+	{{#each data.studentScore}}
+	<h2>
+		<span> {{this.studentName.first}} </span>
+		<span>{{this.studentName.last}}</span>
+	</h2>
+	{{/each}}
+	<h1>Testimonials</h1>
+	{{#each data.testimonial}}
+	<h2>
+		<span> {{this.studentName.first}} </span>
+		<span>{{this.studentName.last}}</span>
+	</h2>
+	{{/each}}
+
+	</div>
