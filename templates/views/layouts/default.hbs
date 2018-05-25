@@ -24,7 +24,7 @@
 <body>
 	<div id="header">
 		<div class="container">
-			<div role="navigation" class="navbar navbar-default">
+			<div role="navigation" class="navbar navbar-inverse navbar-fixed-top navbar-custom">
 				<div class="container-fluid">
 					<div class="navbar-header">
 						<button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle">
@@ -33,7 +33,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a href="/" class="navbar-brand">SquareEducation</a>
+						<a href="/" class="navbar-brand titleBrand">Square Education</a>
 					</div>
 					<div class="collapse navbar-collapse">
 						<ul class="nav navbar-nav navbar-left">
@@ -86,12 +86,14 @@
 		</div>
 		{{/if}}
 		<!-- The content block should contain the body of your template's content-->
-		{{{body}}}
+		<div style="margin-top:20px">
+			{{{body}}}
+		</div>
 	</div>
 	<div class="container">
 		<div id="footer">
 			<p>Powered by
-				<a href="http://panthrax.com" target="_blank">Panthrax Digital</a>.</p>
+				<a href="http://www.panthrax.com/" target="_blank">Panthrax Digital</a>.</p>
 		</div>
 	</div>
 	{{!-- //- jQuery 1.11.3 is included by default, and required by both Bootstrap //- and the KeystoneJS Content Editor. If

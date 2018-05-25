@@ -1,6 +1,3 @@
-body{
-  background-color: #f9f9f9;
-}
 h3 {
   width: 100%;
   height: 400px;
@@ -17,9 +14,9 @@ h3 {
 
 #studentCardContainter {
   height: 275px;
-  background: white;
+  background-color: #f9f9f9;
   box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
-  margin:  20px 0;
+  margin: 20px 0;
 }
 
 #studentCardContainter > h2 {
@@ -34,18 +31,24 @@ h3 {
 
   /* font-family: 'Roboto', sans-serif; */
 }
-#studentCardContainter > .img-wrapper {
-  padding: 0;
+.img-wrapper {
   position: relative;
-  height: 200px;
+  height: 150px;
+  width: 100%;
+  
 }
-#studentCardContainter > .details {
-  color: "#212121";
-  padding: 1px;
+.details {
+  color: #fcfcf7;
+  padding: 10px;
   font-weight: 500px;
   font-family: "Roboto", sans-serif;
   text-align: center;
-  background: white;
+  background-color: gray;
+}
+
+.cardInfo {
+  background-color:white;
+  height: 87px;
 }
 
 #testimonialCardDetails {
@@ -87,7 +90,6 @@ h3 {
   font-weight: 200;
   font-size: 24px;
   color: black;
-  
 }
 
 .titleSubText {
@@ -101,13 +103,32 @@ h3 {
   width: 100%;
   text-align: left;
   font-size: 30px;
-  font-weight: 500;
+  font-weight: 400;
   margin-left: 15px;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
 
+.titleRight {
+  float: right;
+  font-size: 18px;
+  color: lightskyblue;
+  margin-right: 15px;
+  cursor: pointer;
+  padding-top: 10px;
+}
+
 .col-sm-3 {
   background-color: rebeccapurple;
   color: white;
+}
+
+.titleBrand {
+  font-weight: 500;
+  color: white;
+}
+
+.navbar-custom {
+  color: #ffffff;
+  
 }

@@ -20,18 +20,22 @@
 		</div>
 	</div>
 	<div>
-		<div class="title">Top Scorer</div>
+		<span class="title">Top Scorer</span>
+		<span class="titleRight">show more</span>
 		<div class="rows">
 			{{#each data.topScore}}
 			<div class="col-xs-12 col-sm-6 col-md-3">
 				<div id="studentCardContainter">
-					<div className="img-wrapper">
-						<img src="" />
-					</div>
-					<div className="details">
+					<div class="details">
 						<span>{{this.studentName.first}}
 						</span>
 						<span>{{this.studentName.last}}</span>
+					</div>
+					<div class="img-wrapper">
+						<img src="" />
+					</div>
+					<div class="cardInfo">
+
 					</div>
 				</div>
 			</div>
@@ -41,17 +45,21 @@
 	<br/>
 	<div>
 		<div class="title">Subject Highest</div>
+		<span class="titleRight">show more</span>
 		<div class="rows">
 			{{#each data.subjectHighest}}
 			<div class="col-xs-12 col-sm-6 col-md-3">
 				<div id="studentCardContainter">
-					<div className="img-wrapper">
-						<img src="" />
-					</div>
-					<div className="details">
+					<div class="details">
 						<span>{{this.studentName.first}}
 						</span>
 						<span>{{this.studentName.last}}</span>
+					</div>
+					<div class="img-wrapper">
+						<img src="" />
+					</div>
+					<div class="cardInfo">
+						
 					</div>
 				</div>
 			</div>
@@ -61,26 +69,31 @@
 
 		<div>
 			<div class="title">Growth Achieved</div>
+			<span class="titleRight">show more</span>
 			<div class="rows">
 				{{#each data.growthAchieved}}
 				<div class="col-xs-12 col-sm-6 col-md-3">
 					<div id="studentCardContainter">
-						<div className="img-wrapper">
-							<img src="" />
-						</div>
-						<div className="details">
-							<span>{{this.studentName.first}}
-							</span>
-							<span>{{this.studentName.last}}</span>
-						</div>
+					<div class="details">
+						<span>{{this.studentName.first}}
+						</span>
+						<span>{{this.studentName.last}}</span>
 					</div>
+					<div class="img-wrapper">
+						<img src="" />
+					</div>
+					<div class="cardInfo">
+						
+					</div>
+				</div>
 				</div>
 				{{/each}}
 			</div>
 		</div>
 
 		<div>
-			<div class="title">Parent Says</div>
+			<div class="title">Proud Parents </div>
+			<span class="titleRight">show more</span>
 			<div class="rows">
 				{{#each data.testimonial}}
 				<div class="col-xs-12 col-sm-6 col-md-4">
