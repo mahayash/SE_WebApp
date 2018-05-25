@@ -1,32 +1,61 @@
-var keystone = require('keystone');
+var keystone = require("keystone");
 
-exports = module.exports = async function (req, res) {
-	var view = new keystone.View(req, res);
-	var locals = res.locals;
-	var StoreResult = {};
+exports = module.exports = async function(req, res) {
+  var view = new keystone.View(req, res);
+  var locals = res.locals;
+  var StoreResult = {};
+  var topScore = {};
+  var subjectHighest = {};
+  var growthAchieved = {};
 
-	// locals.section is used to set the currently selected
-	// item in the header navigation.
-	locals.section = 'home';
-	locals.data = {
-		studentScore: [],
-	};
-	locals.data = {
-		testimonial: [],
-	};
+  // locals.section is used to set the currently selected
+  // item in the header navigation.
+  locals.section = "home";
+  locals.data = {
+    topScore: [],
+    subjectHighest: [],
+    growthAchieved: [],
+    testimonial: []
+  };
 
-	// get the list of all student score
-	var studentScore = keystone.list('StudentScore').model.find().select('studentName');
-	studentScore.exec(function (err, result1) {
-		locals.data.studentScore = result1;
-	});
+  // get the list of all student score
+  var studentScore = keystone
+    .list("StudentScore")
+    .model.find()
+    .sort("displayInCategories");
+  studentScore.exec(function(err, result1) {
+    var topScorerIndex = 0,
+      subjectHighestIndex = 0,
+      growthAchievedIndex = 0;
 
+    for (let index = 0; index < result1.length; index++) {
+      const element = result1[index];
+      switch (element.displayInCategories) {
+		case 1:
+          topScore[topScorerIndex] = element;
+          topScorerIndex++;
+          break;
+        case 2:
+          subjectHighest[subjectHighestIndex] = element;
+          subjectHighestIndex++;
+          break;
+        case 3:
+          growthAchieved[growthAchievedIndex] = element;
+          growthAchievedIndex++;
+          break;
+      }
+    }
 
-	var testimonial = keystone.list('Testimonial').model.find().select('studentName');
-	testimonial.exec(function (err, result2) {
-		locals.data.testimonial = result2;
-	});
+    locals.data.topScore = topScore;
+    locals.data.subjectHighest = subjectHighest;
+    locals.data.growthAchieved = growthAchieved;
+  });
 
-	// Render the view
-	view.render('index');
+  var testimonial = keystone.list("Testimonial").model.find();
+  testimonial.exec(function(err, result2) {
+    locals.data.testimonial = result2;
+  });
+
+  // Render the view
+  view.render("index");
 };

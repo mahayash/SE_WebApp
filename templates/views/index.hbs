@@ -1,5 +1,5 @@
 <div class="container">
-	<div id='splotLight' >
+	<div id='splotLight'>
 		<div>
 			<h3>1</h3>
 		</div>
@@ -19,18 +19,97 @@
 			<h3>6</h3>
 		</div>
 	</div>
-	<h1>Student Score</h1>
-	{{#each data.studentScore}}
-	<h2>
-		<span> {{this.studentName.first}} </span>
-		<span>{{this.studentName.last}}</span>
-	</h2>
-	{{/each}}
-	<h1>Testimonials</h1>
-	{{#each data.testimonial}}
-	<h2>
-		<span> {{this.studentName.first}} </span>
-		<span>{{this.studentName.last}}</span>
-	</h2>
-	{{/each}}
+	<div>
+		<div class="title">Top Scorer</div>
+		<div class="rows">
+			{{#each data.topScore}}
+			<div class="col-xs-12 col-sm-6 col-md-3">
+				<div id="studentCardContainter">
+					<div className="img-wrapper">
+						<img src="" />
+					</div>
+					<div className="details">
+						<span>{{this.studentName.first}}
+						</span>
+						<span>{{this.studentName.last}}</span>
+					</div>
+				</div>
+			</div>
+			{{/each}}
+		</div>
+	</div>
+	<br/>
+	<div>
+		<div class="title">Subject Highest</div>
+		<div class="rows">
+			{{#each data.subjectHighest}}
+			<div class="col-xs-12 col-sm-6 col-md-3">
+				<div id="studentCardContainter">
+					<div className="img-wrapper">
+						<img src="" />
+					</div>
+					<div className="details">
+						<span>{{this.studentName.first}}
+						</span>
+						<span>{{this.studentName.last}}</span>
+					</div>
+				</div>
+			</div>
+			{{/each}}
+		</div>
+		<br/>
+
+		<div>
+			<div class="title">Growth Achieved</div>
+			<div class="rows">
+				{{#each data.growthAchieved}}
+				<div class="col-xs-12 col-sm-6 col-md-3">
+					<div id="studentCardContainter">
+						<div className="img-wrapper">
+							<img src="" />
+						</div>
+						<div className="details">
+							<span>{{this.studentName.first}}
+							</span>
+							<span>{{this.studentName.last}}</span>
+						</div>
+					</div>
+				</div>
+				{{/each}}
+			</div>
+		</div>
+
+		<div>
+			<div class="title">Parent Says</div>
+			<div class="rows">
+				{{#each data.testimonial}}
+				<div class="col-xs-12 col-sm-6 col-md-4">
+					<div id="testimonialCardDetails">
+						<img src={this.parentImagePath} style="width: '100px', height: '100px'" />
+						<div>
+							<div id="testimonailParent">
+								<div className="titleText">
+									<span>{{this.parentName.first}}</span>
+									<span> {{ this.parentName.last }} </span>
+								</div>
+								<span className="titleSubText">
+									{{ this.relationWithStudent }}
+								</span>
+								<span className="titleSubText">
+									{{ this.studentName.first }}
+								</span>
+								<span className="titleSubText">
+									{{ this.studentName.last }}
+								</span>
+								<p id="testimonialSquare">{{this.fromSquareEducation}}</p>
+							</div>
+							<p id="testimonialText">{{this.testimonial}}</p>
+						</div>
+					</div>
+				</div>
+				{{/each}}
+			</div>
+		</div>
+	</div>
+</div>
 </div>

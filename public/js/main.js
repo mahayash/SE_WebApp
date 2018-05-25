@@ -1,7 +1,8 @@
 $(document).ready(function() {
   $("#splotLight").slick({
     dots: true,
-    autoplay: true,
+    autoplay: false,
     infinite : true,
+    arrows :false
   });
 });
