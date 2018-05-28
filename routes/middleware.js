@@ -21,10 +21,10 @@ exports.initLocals = function (req, res, next) {
 	res.locals.navLinks = [
 		// { label: 'Courses', key: 'courses', href: '/courses' },
 		{ label: 'About us', key: 'about', href: '/about' },
-		{ label: 'Online', key: 'online', href: '/online' },
-		{ label: 'Career', key: 'career', href: '/career' },
+		// { label: 'Online', key: 'online', href: '/online' }, Coming Soon
+		// { label: 'Career', key: 'career', href: '/career' }, Coming Soon
 		// { label: 'Students', key: 'students', href: '/students' },
-		{ label: 'Forms', key: 'forms', href: '/forms' },
+		{ label: 'Feedback', key: 'feedback', href: '/feedback' },
 		// { label: 'Team', key: 'team', href: '/team' },
 		{ label: 'Gallery', key: 'gallery', href: '/gallery' },
 		{ label: 'Contact', key: 'contact', href: '/contact' },
