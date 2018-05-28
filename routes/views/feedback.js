@@ -18,7 +18,6 @@ exports = module.exports = function(req, res) {
       req.body,
       {
         flashErrors: true,
-        fields: "name, phone, message",
         errorMessage: "There was a problem submitting your feedback:"
       },
       function(err) {

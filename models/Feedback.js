@@ -8,11 +8,11 @@ var Feedback = new keystone.List("Feedback", {
 
 Feedback.add({
   name: { type: Types.Name, required: true },
-  phone: { type: String, require: true },
+  phoneNumber: { type: String, require: true },
   message: { type: Types.Markdown, required: true },
   createdAt: { type: Date, default: Date.now }
 });
 
 Feedback.defaultSort = '-createdAt';
-Feedback.defaultColumns = 'name, phone, message, createdAt';
+Feedback.defaultColumns = 'name, phoneNumber, message, createdAt';
 Feedback.register();

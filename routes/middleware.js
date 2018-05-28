@@ -7,8 +7,7 @@
  * you have more middleware you may want to group it as separate
  * modules in your project's /lib directory.
  */
-var _ = require('lodash');
-
+var _ = require("lodash");
 
 /**
 	Initialises the standard view locals
@@ -17,47 +16,66 @@ var _ = require('lodash');
 	the navigation in the header, you may wish to change this array
 	or replace it with your own templates / logic.
 */
-exports.initLocals = function (req, res, next) {
-	res.locals.navLinks = [
-		// { label: 'Courses', key: 'courses', href: '/courses' },
-		{ label: 'About us', key: 'about', href: '/about' },
-		// { label: 'Online', key: 'online', href: '/online' }, Coming Soon
-		// { label: 'Career', key: 'career', href: '/career' }, Coming Soon
-		// { label: 'Students', key: 'students', href: '/students' },
-		{ label: 'Feedback', key: 'feedback', href: '/feedback' },
-		// { label: 'Team', key: 'team', href: '/team' },
-		{ label: 'Gallery', key: 'gallery', href: '/gallery' },
-		{ label: 'Contact', key: 'contact', href: '/contact' },
-		
-	];
-	res.locals.user = req.user;
-	next();
+exports.initLocals = function(req, res, next) {
+  res.locals.navLinks = [
+    // { label: 'Courses', key: 'courses', href: '/courses' },
+    { label: "About us", key: "about", href: "/about" },
+    // { label: 'Online', key: 'online', href: '/online' }, Coming Soon
+    // { label: 'Career', key: 'career', href: '/career' }, Coming Soon
+    {
+      label: "Students",
+      key: "students",
+      pages: [
+        { label: "Online", subkey: "online", href: "/online" },
+        { label: "Careers", subkey: "career", href: "/careers" },
+        { label: "My Zone", subkey: "myzone", href: "/myzone" },
+        { label: "After Life", subkey: "afterLife", href: "/afterLife" }
+      ]
+    },
+    {
+      label: "Forms",
+      key: "forms",
+      pages: [
+        { label: "Feedback", subkey: "feedback", href: "/feedback" },
+        { label: "Complaint", subkey: "complaint", href: "/complaint" },
+        { label: "Any Doubt", subkey: "anydoubt", href: "/doubt" },
+        { label: "Enter Marks", subkey: "enterMarks", href: "/enterMarks" }
+      ]
+    },
+    // { label: 'Team', key: 'team', href: '/team' },
+    { label: "Gallery", key: "gallery", href: "/gallery" },
+    { label: "Contact", key: "contact", href: "/contact" }
+  ];
+  res.locals.user = req.user;
+  next();
 };
-
 
 /**
 	Fetches and clears the flashMessages before a view is rendered
 */
-exports.flashMessages = function (req, res, next) {
-	var flashMessages = {
-		info: req.flash('info'),
-		success: req.flash('success'),
-		warning: req.flash('warning'),
-		error: req.flash('error'),
-	};
-	res.locals.messages = _.some(flashMessages, function (msgs) { return msgs.length; }) ? flashMessages : false;
-	next();
+exports.flashMessages = function(req, res, next) {
+  var flashMessages = {
+    info: req.flash("info"),
+    success: req.flash("success"),
+    warning: req.flash("warning"),
+    error: req.flash("error")
+  };
+  res.locals.messages = _.some(flashMessages, function(msgs) {
+    return msgs.length;
+  })
+    ? flashMessages
+    : false;
+  next();
 };
-
 
 /**
 	Prevents people from accessing protected pages when they're not signed in
  */
-exports.requireUser = function (req, res, next) {
-	if (!req.user) {
-		req.flash('error', 'Please sign in to access this page.');
-		res.redirect('/keystone/signin');
-	} else {
-		next();
-	}
+exports.requireUser = function(req, res, next) {
+  if (!req.user) {
+    req.flash("error", "Please sign in to access this page.");
+    res.redirect("/keystone/signin");
+  } else {
+    next();
+  }
 };
