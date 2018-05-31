@@ -38,6 +38,8 @@ exports = module.exports = function (app) {
 	//app.get('/career', routes.views.careers); // student can choose their respective career, and study as per that
 	app.get('/online', routes.views.online);
 	app.all('/feedback', routes.views.feedback);
+	app.all('/complaint', routes.views.complaint);
+	app.get('/clearDoubt', routes.views.clearDoubt);
 	app.get('/team', routes.views.team);
 	app.get('/gallery', routes.views.gallery);
 	app.all('/contact', routes.views.contact);

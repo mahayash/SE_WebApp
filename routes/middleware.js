@@ -20,30 +20,28 @@ exports.initLocals = function(req, res, next) {
   res.locals.navLinks = [
     // { label: 'Courses', key: 'courses', href: '/courses' },
     { label: "About us", key: "about", href: "/about" },
-    // { label: 'Online', key: 'online', href: '/online' }, Coming Soon
-    // { label: 'Career', key: 'career', href: '/career' }, Coming Soon
-    {
-      label: "Students",
-      key: "students",
-      pages: [
-        { label: "Online", subkey: "online", href: "/online" },
-        { label: "Careers", subkey: "career", href: "/careers" },
-        { label: "My Zone", subkey: "myzone", href: "/myzone" },
-        { label: "After Life", subkey: "afterLife", href: "/afterLife" }
-      ]
-    },
+    // {
+    //   label: "Students",
+    //   key: "students",
+    //   pages: [
+    //     { label: "Online", subkey: "online", href: "/online" },
+    //     { label: "Careers", subkey: "career", href: "/careers" },
+    //     { label: "My Zone", subkey: "myzone", href: "/myzone" },
+    //     { label: "After Life", subkey: "afterLife", href: "/afterLife" }
+    //   ]
+    // },
     {
       label: "Forms",
       key: "forms",
       pages: [
         { label: "Feedback", subkey: "feedback", href: "/feedback" },
         { label: "Complaint", subkey: "complaint", href: "/complaint" },
-        { label: "Any Doubt", subkey: "anydoubt", href: "/doubt" },
+        { label: "Clear Doubt", subkey: "doubt", href: "/clearDoubt" },
         { label: "Enter Marks", subkey: "enterMarks", href: "/enterMarks" }
       ]
     },
     // { label: 'Team', key: 'team', href: '/team' },
-    { label: "Gallery", key: "gallery", href: "/gallery" },
+    // { label: "Gallery", key: "gallery", href: "/gallery" },
     { label: "Contact", key: "contact", href: "/contact" }
   ];
   res.locals.user = req.user;
