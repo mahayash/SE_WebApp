@@ -138,9 +138,8 @@ h3 {
 
 .navbar-custom {
   color: #ffffff;
-}
-
-.studentInfo {
+  letter-spacing: 1px;
+  background: rgb(48, 51, 56);
 }
 
 .studentName {
