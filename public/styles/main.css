@@ -58,7 +58,7 @@ h3 {
   height: 200px;
   background: white;
   margin-top: 20px;
-  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
+  /* box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25); */
   overflow: hidden;
 }
 
@@ -115,10 +115,11 @@ h3 {
 .titleRight {
   float: right;
   font-size: 18px;
-  color: blueviolet;
+  color: dodgerblue;
   margin-right: 15px;
   cursor: pointer;
   padding-top: 10px;
+  
 }
 
 .col-sm-3 {
