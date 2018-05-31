@@ -1,3 +1,25 @@
 <div class="container">
-    <h1>About us where we are describing SE and its Team </h1>
+    <h1>Description about Square Education</h1>
+
+    <div class="rows">
+
+        {{#each data.foundationTeam}}
+        <h2>
+            <span>{{this.facultyName.first}}</span> &nbsp;
+            <span>{{this.facultyName.last}}</span>
+        </h2>
+        {{/each}}
+    </div>
+
+    <div class="rows">
+
+        {{#each data.pillarTeam}}
+        <h2>
+            <span>{{this.facultyName.first}}</span> &nbsp;
+            <span>{{this.facultyName.last}}</span>
+        </h2>
+
+        {{/each}}
+    </div>
+
 </div>
