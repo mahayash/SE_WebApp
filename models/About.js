@@ -11,6 +11,7 @@ About.add({
   facultyImage: { type: String },
   teachingExperience: { type: Types.Number },
   profession: { type: String },
+  roleAtSquareEducation: { type: String },
   team: {
     type: Types.Select,
     numeric: true,
