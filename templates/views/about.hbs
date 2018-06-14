@@ -7,16 +7,10 @@
             <strong>Acche Marks</strong>. The purpose of Square Education is to improve the foundation of your child and prepare
             them for the professional career </p>
     </div>
-    <h1>Foundation Team</h1>
+    <div class="title">Foundation Team</div>
     <div class="rows">
-        {{#each data.foundationTeam}} {{!--
-        <h2>
-            <span>{{this.facultyName.first}}</span> &nbsp;
-            <span>{{this.facultyName.last}}</span>
-        </h2> --}}
-
+        {{#each data.foundationTeam}}
         <div class="col-xs-12 col-sm-6 col-md-3">
-
             <div id="professionalCardContainter">
                 <div style="padding-top: 10px">
                     <img class="img-wrapper" src={{this.facultyImage}} />
@@ -36,18 +30,46 @@
                     <strong>Role at Square Education</strong>
                     <p>{{this.roleAtSquareEducation}}</p>
                     <strong>Why Square Education ?</strong>
-                    <p>Click here to know</p>
+                    <div>
+                        <a href="#">Watch Video</a>
+                    </div>
                 </div>
             </div>
         </div>
         {{/each}}
     </div>
+    <div class="title" >Pillar Team</div>
     <div class="rows">
         {{#each data.pillarTeam}}
-        <h2>
-            <span>{{this.facultyName.first}}</span> &nbsp;
-            <span>{{this.facultyName.last}}</span>
-        </h2>
+        <div class="pillarTeamX">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div id="professionalCardContainter">
+                    <div style="padding-top: 10px">
+                        <img class="img-wrapper" src={{this.facultyImage}} />
+                    </div>
+                    <div class="studentInfo">
+                        <div class="studentName">
+                            <span>{{this.facultyName.first}}
+                            </span>
+                            <span>{{this.facultyName.last}}</span>
+                        </div>
+                    </div>
+                    <div style="padding:10px">
+                        <strong>Teaching Experience</strong>
+                        <p>{{this.teachingExperience}} years</p>
+                        <strong>Current Profession</strong>
+                        <p>{{this.profession}}</p>
+                        <strong>Role at Square Education</strong>
+                        <p>{{this.roleAtSquareEducation}}</p>
+                        <strong>Why Square Education ?</strong>
+                        <div>
+                            <a href="#">Watch Video</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         {{/each}}
+
     </div>
 </div>
