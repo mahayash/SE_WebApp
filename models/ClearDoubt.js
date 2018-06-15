@@ -1,17 +1,16 @@
 var keystone = require("keystone");
 var Types = keystone.Field.Types;
 
-var ClearDoubt = new keystone.List("ClearDoubt", {
+var clearDoubt = new keystone.List("ClearDoubt", {
   nocreate: true,
   noedit: true
 });
 
-ClearDoubt.add({
-  studentName: { type: Types.Name, required: true },
-  phoneNumber: { type: String, required: true },
+clearDoubt.add({
+  studentName: { type: Types.Name },
+  phoneNumber: { type: Types.Text },
   courseStudying: {
     type: Types.Select,
-    require: true,
     options: [
       { value: "10", label: "Tenth" },
       { value: "9", label: "Ninth" },
@@ -24,18 +23,18 @@ ClearDoubt.add({
   },
   board: {
     type: Types.Select,
-    require: true,
     options: [
       { value: "SSC", label: "SSC Board" },
       { value: "CBSE", label: "CBSE Board" }
     ]
   },
-  subject: { type: String, required: true },
-  chapterName: { type: String, required: true },
-  writeYourDoubt: { type: Types.Markdown, required: true },
+  subject: { type: Types.Text },
+  chapterName: { type: Types.Text },
+  writeYourDoubt: { type: Types.Markdown },
   createdAt: { type: Date, default: Date.now }
 });
 
-ClearDoubt.defaultSort = "-createdAt";
-ClearDoubt.defaultColumns = "studentName, phone, courseStuyding, message";
-ClearDoubt.register();
+clearDoubt.defaultSort = "-createdAt";
+clearDoubt.defaultColumns =
+  "studentName, courseStudying, subject, chapterName, writeYourDoubt";
+clearDoubt.register();

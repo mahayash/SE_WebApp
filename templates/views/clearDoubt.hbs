@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="title">Clear Your Doubt</div>
+    <div class="title" style="margin:20px 0px;">Clear Your Doubt</div>
 </div>
 <div class="container">
     <div class="row">
@@ -13,11 +13,11 @@
                     <label>Student Name</label>
                     <input type="text" name="studentName" class="form-control" value="{{formData.studentName}}">
                 </div>
-                <div class="form-group {{#if validationErrors.phoneNumber}}has-error{{/if}}">
+                <div class="form-group">
                     <label>Phone Number</label>
                     <input type="text" name="phoneNumber" class="form-control" value="{{formData.phoneNumber}}">
                 </div>
-                <div class="form-group {{#if validationErrors.courseStudying}}has-error{{/if}}">
+                <div class="form-group ">
                     <label>Course Studying</label>
                     <select name="courseStudying" class="form-control">
                         <option value="">(select one)</option>
@@ -26,7 +26,7 @@
                         {{/each}}
                     </select>
                 </div>
-                <div class="form-group {{#if validationErrors.board}}has-error{{/if}}">
+                <div class="form-group ">
                     <label>Board</label>
                     <select name="board" class="form-control">
                         <option value="">(select one)</option>
@@ -35,18 +35,17 @@
                         {{/each}}
                     </select>
                 </div>
-                <div class="form-group {{#if validationErrors.subject}}has-error{{/if}} ">
+                <div class="form-group ">
                     <label>Subject</label>
                     <input type="text" name="subject" class="form-control" value="{{formData.subject}}">
                 </div>
-                <div class="form-group {{#if validationErrors.chapterName}}has-error{{/if}} ">
+                <div class="form-group ">
                     <label>Chapter Name</label>
                     <input type="text" name="chapterName" class="form-control" value="{{formData.chapterName}}">
                 </div>
-                <div class="form-group {{#if validationErrors.writeYourDoubt}}has-error{{/if}} ">
+                <div class="form-group ">
                     <label>Your Doubt</label>
-                    <textarea name="writeYourDoubt" placeholder="Write your doubt here..." rows="4"
-                     class="form-control">{{formData.writeYourDoubt}}</textarea>
+                    <textarea name="writeYourDoubt" placeholder="Write your doubt here..." rows="4" class="form-control">{{formData.writeYourDoubt}}</textarea>
                 </div>
                 <div class="form-actions">
                     <button type="submit" class="btn btn-primary">Submit</button>

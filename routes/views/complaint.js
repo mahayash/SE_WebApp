@@ -1,5 +1,6 @@
 var keystone = require("keystone");
 var Complaint = keystone.list("Complaint");
+var ClearDoubt = keystone.list("ClearDoubt");
 
 exports = module.exports = function(req, res) {
   var view = new keystone.View(req, res);
@@ -8,6 +9,8 @@ exports = module.exports = function(req, res) {
   locals.section = "forms";
   locals.formData = req.body || {};
   locals.validationErrors = {};
+  locals.courseStudying = ClearDoubt.fields.courseStudying.ops;
+  locals.board = ClearDoubt.fields.board.ops;
   locals.complaintSubmitted = false;
 
   view.on("post", { action: "complaint" }, function(next) {
@@ -18,6 +21,10 @@ exports = module.exports = function(req, res) {
       req.body,
       {
         flashErrors: true,
+        required:
+          "studentName,phoneNumber,courseStudying, board,describeComplaint",
+        fields:
+          "studentName,phoneNumber,courseStudying, board,describeComplaint",
         errorMessage: "There was a problem submitting your complaint:"
       },
       function(err) {

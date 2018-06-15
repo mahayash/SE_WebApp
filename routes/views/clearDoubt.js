@@ -16,19 +16,21 @@ exports = module.exports = function(req, res) {
   view.on("post", { action: "clearDoubt" }, function(next) {
     var newClearDoubt = new ClearDoubt.model();
     var updater = newClearDoubt.getUpdateHandler(req);
-    console.log("clear doubt 2");
 
     updater.process(
       req.body,
       {
         flashErrors: true,
-        errorMessage: "There was a problem submitting your doubt:"
+        required:
+          "studentName,phoneNumber,courseStudying,board,subject,chapterName,writeYourDoubt",
+        fields:
+          "studentName,phoneNumber,courseStudying,board,subject,chapterName,writeYourDoubt",
+        errorMessage:
+          "There was a problem submitting your doubt"
       },
       function(err) {
-        console.log("clear doubt 3" + err);
         if (err) {
           locals.validationErrors = err.errors;
-          locals.doubtSubmitted = false;
         } else {
           locals.doubtSubmitted = true;
         }

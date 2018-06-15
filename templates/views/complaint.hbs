@@ -1,25 +1,54 @@
 <div class="container">
-    <h1>Complaint</h1>
+    <div class="title" style="margin:20px 0px;">Say your Complaint</div>
 </div>
 <div class="container">
     <div class="row">
         <div class="col-sm-8 col-md-6">
             {{#if complaintSubmitted}}
-            <h2>We are sorry, your complaint will be resolved immediately</h2>
+            <h2>Your complaint will be resolved immediately</h2>
             {{else}}
             <form method="post">
                 <input type="hidden" name="action" value="complaint">
                 <div class="form-group {{#if validationErrors.name}}has-error{{/if}}">
-                    <label>Name</label>
-                    <input type="text" name="name.full" class="form-control" value="{{formData.[name.full]}}">
+                    <label>Student Name</label>
+                    <input type="text" name="studentName" class="form-control" value="{{formData.studentName}}">
                 </div>
                 <div class="form-group {{#if validationErrors.phoneNumber}}has-error{{/if}}">
-                    <label>Phone</label>
+                    <label>Phone Number</label>
                     <input type="text" name="phoneNumber" class="form-control" value="{{formData.phoneNumber}}">
                 </div>
-                <div class="form-group {{#if validationErrors.message}}has-error{{/if}} ">
-                    <label>Message</label>
-                    <textarea name="message" placeholder="Leave us a message..." rows="4" class="form-control">{{formData.message}}</textarea>
+                <div class="form-group ">
+                    <label>Course Studying</label>
+                    <select name="courseStudying" class="form-control">
+                        <option value="">(select one)</option>
+                        {{#each courseStudying}}
+                        <option value="{{value}}">{{label}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="form-group ">
+                    <label>Board</label>
+                    <select name="board" class="form-control">
+                        <option value="">(select one)</option>
+                        {{#each board}}
+                        <option value="{{value}}">{{label}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="form-group {{#if validationErrors.describeComplaint}}has-error{{/if}} ">
+                    <label>Please describe your complaint in detail. Include the names of persons, locations, and dates involved.
+                        If this complaint is against specific person(s), please list their names and titles</label>
+                    <textarea name="describeComplaint" placeholder="Write your complain here ..." rows="4" class="form-control">{{formData.describeComplaint}}</textarea>
+                </div>
+                <div class="form-group {{#if validationErrors.attemptToResolve}}has-error{{/if}} ">
+                    <label>What attempts have you made to resolve this complaint up to now? Please state who you contacted and what
+                        transpired.
+                    </label>
+                    <textarea name="attemptToResolve" placeholder="Write your attempt to resolve your complain here ..." rows="4" class="form-control">{{formData.attemptToResolve}}</textarea>
+                </div>
+                <div class="form-group {{#if validationErrors.seekResolution}}has-error{{/if}} ">
+                    <label>What resolution would you consider fair? What resolution do you seek?</label>
+                    <textarea name="seekResolution" placeholder="Write your resolution you expect ..." rows="4" class="form-control">{{formData.seekResolution}}</textarea>
                 </div>
                 <div class="form-actions">
                     <button type="submit" class="btn btn-primary">Submit</button>
