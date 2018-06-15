@@ -24,24 +24,24 @@ exports.initLocals = function(req, res, next) {
     //   label: "Students",
     //   key: "students",
     //   pages: [
-    //     { label: "Online", subkey: "online", href: "/online" },
-    //     { label: "Careers", subkey: "career", href: "/careers" },
-    //     { label: "My Zone", subkey: "myzone", href: "/myzone" },
-    //     { label: "After Life", subkey: "afterLife", href: "/afterLife" }
+    //     { label: "Online", subkey: "online", href: "/online" },// Open the Moodle account page login using Squadl Account
+    //     { label: "Careers", subkey: "career", href: "/careers" }, // Choose your career ( mohit mingle book )
+    //     { label: "My Zone", subkey: "myzone", href: "/myzone" }, // notes, pdf, images, blogs
+    //     { label: "After Life", subkey: "afterLife", href: "/afterLife" } // life of Square Education student after SE
     //   ]
     // },
     {
       label: "Forms",
       key: "forms",
       pages: [
+        { label: "Clear Doubt", subkey: "doubt", href: "/clearDoubt" },
         { label: "Feedback", subkey: "feedback", href: "/feedback" },
         { label: "Complaint", subkey: "complaint", href: "/complaint" },
-        { label: "Clear Doubt", subkey: "doubt", href: "/clearDoubt" },
-        { label: "Enter Marks", subkey: "enterMarks", href: "/enterMarks" }
+        // { label: "Enter Marks", subkey: "enterMarks", href: "/enterMarks" } // student will enter the School
+        // Marks, & that marks will be displayed calculated & displayed on the first page after verification
       ]
     },
-    // { label: 'Team', key: 'team', href: '/team' },
-    // { label: "Gallery", key: "gallery", href: "/gallery" },
+    // { label: "Gallery", key: "gallery", href: "/gallery" }, will take the pics from Instagram API
     { label: "Centers", key: "centers", href: "/centers" }
   ];
   res.locals.user = req.user;

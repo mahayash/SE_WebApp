@@ -8,8 +8,8 @@ var ClearDoubt = new keystone.List("ClearDoubt", {
 
 ClearDoubt.add({
   studentName: { type: Types.Name, required: true },
-  phone: { type: String, required: true },
-  courseStuyding: {
+  phoneNumber: { type: String, required: true },
+  courseStudying: {
     type: Types.Select,
     require: true,
     options: [
@@ -22,7 +22,17 @@ ClearDoubt.add({
       { value: "Grammar", label: "Grammar" }
     ]
   },
-  message: { type: Types.Markdown, required: true },
+  board: {
+    type: Types.Select,
+    require: true,
+    options: [
+      { value: "SSC", label: "SSC Board" },
+      { value: "CBSE", label: "CBSE Board" }
+    ]
+  },
+  subject: { type: String, required: true },
+  chapterName: { type: String, required: true },
+  writeYourDoubt: { type: Types.Markdown, required: true },
   createdAt: { type: Date, default: Date.now }
 });
 

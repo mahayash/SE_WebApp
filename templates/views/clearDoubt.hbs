@@ -1,25 +1,52 @@
 <div class="container">
-    <h1>Clear Doubt </h1>
+    <div class="title">Clear Your Doubt</div>
 </div>
 <div class="container">
     <div class="row">
         <div class="col-sm-8 col-md-6">
-            {{#if clearDboutSubmitted}}
-            <h2>Your doubt will be resolved immediately</h2>
+            {{#if doubtSubmitted}}
+            <h2>Your doubt will be resolved immediately at your Square Education center</h2>
             {{else}}
             <form method="post">
-                <input type="hidden" name="action" value="complaint">
-                <div class="form-group {{#if validationErrors.name}}has-error{{/if}}">
-                    <label>Name</label>
-                    <input type="text" name="name.full" class="form-control" value="{{formData.[name.full]}}">
+                <input type="hidden" name="action" value="clearDoubt">
+                <div class="form-group {{#if validationErrors.studentName}}has-error{{/if}}">
+                    <label>Student Name</label>
+                    <input type="text" name="studentName" class="form-control" value="{{formData.studentName}}">
                 </div>
                 <div class="form-group {{#if validationErrors.phoneNumber}}has-error{{/if}}">
-                    <label>Phone</label>
+                    <label>Phone Number</label>
                     <input type="text" name="phoneNumber" class="form-control" value="{{formData.phoneNumber}}">
                 </div>
-                <div class="form-group {{#if validationErrors.message}}has-error{{/if}} ">
-                    <label>Message</label>
-                    <textarea name="message" placeholder="Leave us a message..." rows="4" class="form-control">{{formData.message}}</textarea>
+                <div class="form-group {{#if validationErrors.courseStudying}}has-error{{/if}}">
+                    <label>Course Studying</label>
+                    <select name="courseStudying" class="form-control">
+                        <option value="">(select one)</option>
+                        {{#each courseStudying}}
+                        <option value="{{value}}">{{label}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="form-group {{#if validationErrors.board}}has-error{{/if}}">
+                    <label>Board</label>
+                    <select name="board" class="form-control">
+                        <option value="">(select one)</option>
+                        {{#each board}}
+                        <option value="{{value}}">{{label}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="form-group {{#if validationErrors.subject}}has-error{{/if}} ">
+                    <label>Subject</label>
+                    <input type="text" name="subject" class="form-control" value="{{formData.subject}}">
+                </div>
+                <div class="form-group {{#if validationErrors.chapterName}}has-error{{/if}} ">
+                    <label>Chapter Name</label>
+                    <input type="text" name="chapterName" class="form-control" value="{{formData.chapterName}}">
+                </div>
+                <div class="form-group {{#if validationErrors.writeYourDoubt}}has-error{{/if}} ">
+                    <label>Your Doubt</label>
+                    <textarea name="writeYourDoubt" placeholder="Write your doubt here..." rows="4"
+                     class="form-control">{{formData.writeYourDoubt}}</textarea>
                 </div>
                 <div class="form-actions">
                     <button type="submit" class="btn btn-primary">Submit</button>
