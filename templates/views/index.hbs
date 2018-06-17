@@ -20,10 +20,49 @@
 		</div>
 	</div>
 
-	<div>
+	<div style="clear:both">
 		<div>
-			<span class="title">Top Scorer</span>
-			<span class="titleRight">show more</span>
+			<span class="title">The Achievers</span>
+			<span class="titleRight">
+				<a href="/viewall/3">view all</a>
+			</span>
+		</div>
+		<div class="rows">
+			{{#each data.growthAchieved}}
+			<div class="col-xs-12 col-sm-6 col-md-3">
+				<div id="studentCardContainter">
+					<div class="details">
+						<span>{{this.percentScored}}% in
+						</span>
+						<span>{{this.examination}}</span>
+					</div>
+					<div>
+						<img class="img-wrapper rounded" src={{this.studentImagePath}} />
+					</div>
+					<div class="studentInfo">
+						<div class="studentName">
+							<span>{{this.studentName.first}}
+							</span>
+							<span>{{this.studentName.last}}</span>
+						</div>
+						<div class="studentSchoolName">
+							<span>{{this.courseOpted}}</span> -
+							<span>{{this.school}}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			{{/each}}
+		</div>
+	</div>
+	<br />
+
+	<div style="clear:both">
+		<div>
+			<span class="title">The Toppers</span>
+			<span class="titleRight">
+				<a href="/viewall/1">view all</a>
+			</span>
 		</div>
 		<div class="rows">
 			{{#each data.topScore}}
@@ -57,8 +96,10 @@
 
 	<div style="clear:both">
 		<div>
-			<span class="title">Subject Highest</span>
-			<span class="titleRight">show more</span>
+			<span class="title">The Highest</span>
+			<span class="titleRight">
+				<a href="/viewall/2">view all</a>
+			</span>
 		</div>
 		<div class="rows">
 			{{#each data.subjectHighest}}
@@ -89,12 +130,13 @@
 		</div>
 
 	</div>
-	<br/>
-
+	<br/> {{!--
 	<div style="clear:both">
 		<div>
-			<span class="title">Growth Achieved</span>
-			<span class="titleRight">show more</span>
+			<span class="title">The Achievers</span>
+			<span class="titleRight">
+				<a href="/viewall/3">view all</a>
+			</span>
 		</div>
 		<div class="rows">
 			{{#each data.growthAchieved}}
@@ -124,11 +166,13 @@
 			{{/each}}
 		</div>
 	</div>
-	<br />
+	<br /> --}}
 
 	<div style="clear:both">
 		<span class="title">Proud Parents </span>
-		<span class="titleRight">show more</span>
+		<span class="titleRight">
+			<a href="/viewall/4">view all</a>
+		</span>
 		<div class="rows">
 			{{#each data.testimonial}}
 			<div class="col-xs-12 col-sm-6 col-md-4">
@@ -144,9 +188,9 @@
 						<div>
 							<span class="titleSubText">
 								{{ this.relationWithStudent }}
-							</span> 
+							</span>
 							<span class="titleSubText">
-							of	{{ this.studentName.first }}
+								of {{ this.studentName.first }}
 							</span>
 							<span class="titleSubText">
 								{{ this.studentName.last }}

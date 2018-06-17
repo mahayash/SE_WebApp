@@ -1,8 +1,20 @@
 <div class="container">
-	<h1>Gallery</h1>
-	<h2>
-		fetch the data from instagram and will display on the screen Scrol to load more, to get more data
-	</h2>
+	<div class="title" style="margin-top:20px">Life At Square Education in Pics</div>
+	<div class="row">
+		{{#each data.pictures}}
+		<div class="col-xs-12 col-sm-6 col-md-2">
+			<div id="professionalCardContainter">
+				<div style="padding-top: 10px">
+					<img class="imgThumbnail" src={{this.facultyImage}} />
+				</div>
+				<div>
+					<span class="imgCaption">{{this.caption}}</span>
+				</div>
+			</div>
+		</div>
+		{{/each}}
+	</div>
+
 </div>
 
 

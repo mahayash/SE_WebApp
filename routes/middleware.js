@@ -36,12 +36,12 @@ exports.initLocals = function(req, res, next) {
       pages: [
         { label: "Clear Doubt", subkey: "doubt", href: "/clearDoubt" },
         { label: "Feedback", subkey: "feedback", href: "/feedback" },
-        { label: "Complaint", subkey: "complaint", href: "/complaint" },
+        { label: "Complaint", subkey: "complaint", href: "/complaint" }
         // { label: "Enter Marks", subkey: "enterMarks", href: "/enterMarks" } // student will enter the School
         // Marks, & that marks will be displayed calculated & displayed on the first page after verification
       ]
     },
-    // { label: "Gallery", key: "gallery", href: "/gallery" }, will take the pics from Instagram API
+    //{ label: "Gallery", key: "gallery", href: "/gallery" }, //will take the pics from Instagram API
     { label: "Centers", key: "centers", href: "/centers" }
   ];
   res.locals.user = req.user;
