@@ -17,6 +17,7 @@ keystone.init({
   static: "public",
   favicon: "public/favicon.ico",
   views: "templates/views",
+  port: 3020,
   "view engine": ".hbs",
   "cookie secret": "sdfsfwe243wfggeryu977kyuhvcdfwvteyyruru67807iyj",
   "custom engine": handlebars.create({
