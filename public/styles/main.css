@@ -50,14 +50,14 @@ h3 {
   letter-spacing: 1px;
   /* background-color: #282726; */
   /* background-color: #192e5b; */
-  background-color: #6600CC;
+  background-color: #6600cc;
 }
 
-.navbar-inverse .navbar-brand{
-  color : white;
+.navbar-inverse .navbar-brand {
+  color: white;
 }
-.navbar-inverse .navbar-nav > li > a{
-  color : white;
+.navbar-inverse .navbar-nav > li > a {
+  color: white;
 }
 
 .details {
@@ -67,7 +67,7 @@ h3 {
   font-family: "Roboto", sans-serif;
   text-align: center;
   /* background: #A7414a; */
-  background-color: #FFCC00;
+  background-color: #ffcc00;
 }
 
 .cardInfo {
@@ -111,7 +111,7 @@ h3 {
 
 .titleText {
   font-size: 18px;
-  color: #6600CC;
+  color: #6600cc;
   font-weight: 500;
 }
 
@@ -131,7 +131,6 @@ h3 {
   margin-left: 15px;
   letter-spacing: 2px;
   text-transform: uppercase;
- 
 }
 
 .titleRight {
@@ -153,7 +152,6 @@ h3 {
   color: white;
 }
 
-
 .studentName {
   font-size: 16px;
   text-align: center;
@@ -161,22 +159,20 @@ h3 {
   text-transform: capitalize;
   margin: 0px;
   padding: 0px;
-  color:#6600CC;
+  color: #6600cc;
 }
 
 .studentSchoolName {
   text-align: center;
   letter-spacing: 0.5px;
-  color:black;
+  color: black;
 }
 
-
-.prof td{
+.prof td {
   padding: 2px;
   background-color: antiquewhite;
   padding: 5px;
 }
-
 
 #professionalCardContainter {
   height: 430px;
@@ -185,3 +181,8 @@ h3 {
   margin: 20px 0;
 }
 
+.btn-primary {
+  color: #fff;
+  background-color: #cc0000;
+  border-color: #cc0000;
+}

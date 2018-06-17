@@ -51,7 +51,7 @@ exports = module.exports = async function(req, res) {
     locals.data.growthAchieved = growthAchieved;
   });
 
-  var testimonial = keystone.list("Testimonial").model.find();
+  var testimonial = keystone.list("Testimonial").model.find().limit(3);
   testimonial.exec(function(err, result2) {
     locals.data.testimonial = result2;
   });

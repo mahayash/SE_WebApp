@@ -7,7 +7,8 @@ exports = module.exports = function(req, res) {
     category: []
   };
 
-  switch (parseInt(req.params.category)) {
+  let categoryType = parseInt(req.params.category);
+  switch (categoryType) {
     case 1:
       locals.data.category = "The Toppers";
       break;
@@ -17,23 +18,33 @@ exports = module.exports = function(req, res) {
     case 3:
       locals.data.category = "The Achievers";
       break;
+    case 4:
+      locals.data.category = "Parent Says";
+      break;
   }
 
-  let studentInCategoryQuery = keystone
-    .list("StudentScore")
-    .model.find()
-    .where("displayInCategories")
-    .equals(req.params.category);
+  if (categoryType != 4) {
+    let studentInCategoryQuery = keystone
+      .list("StudentScore")
+      .model.find()
+      .where("displayInCategories")
+      .equals(categoryType);
 
-  studentInCategoryQuery.exec(function(err, result) {
-    if (result != null) {
-      locals.data.studentInCategory = result;
-    } else {
-      return res
-        .status(404)
-        .send(keystone.wrapHTMLError("Sorry, no records found"));
-    }
-  });
+    studentInCategoryQuery.exec(function(err, result) {
+      if (result != null) {
+        locals.data.studentInCategory = result;
+      } else {
+        return res
+          .status(404)
+          .send(keystone.wrapHTMLError("Sorry, no records found"));
+      }
+    });
+  } else {
+    var testimonial = keystone.list("Testimonial").model.find();
+    testimonial.exec(function(err, result2) {
+      locals.data.studentInCategory = result2;
+    });
+  }
 
   // Render the view
   view.render("viewall");
