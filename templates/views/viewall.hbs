@@ -1,9 +1,22 @@
 <div class="container">
+    <div style="margin-top:20px">
+        <table>
+            <tr>
+                <td>
+                    <a href="/">
+                        <img src="/images/ic_back_arrow.png" /> </a>
+                </td>
+                <td>
+                    <span class="title">{{data.category}}</span>
+                </td>
+            </tr>
+        </table>
+    </div>
     <div class="rows">
         {{#each data.studentInCategory}}
         <div class="col-xs-12 col-sm-6 col-md-2">
-            <div id="studentCardContainter">
-                <div class="details">
+            <div id="studentCardContainter" style="height:300px">
+                <div class="details" style="height:55px">
                     <span>{{this.percentScored}}% in
                     </span>
                     <span>{{this.examination}}</span>
