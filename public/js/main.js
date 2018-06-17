@@ -1,7 +1,7 @@
 $(document).ready(function() {
   $("#splotLight").slick({
     dots: true,
-    autoplay: false,
+    autoplay: true,
     infinite: true,
     arrows: false
   });

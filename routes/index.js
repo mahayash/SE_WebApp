@@ -34,7 +34,7 @@ var routes = {
 // Setup Route Bindings
 exports = module.exports = function (app) {
 	// Views
-	app.get('/', routes.views.index);
+	app.get('/', routes.views.home);
 	//app.get('/career', routes.views.careers); // student can choose their respective career, and study as per that
 	app.get('/online', routes.views.online);
 	app.all('/feedback', routes.views.feedback);
