@@ -25,7 +25,7 @@ exports = module.exports = function(req, res) {
 
   if (categoryType != 4) {
     let studentInCategoryQuery = keystone
-      .list("StudentScore")
+      .list("ViewAll")
       .model.find()
       .where("displayInCategories")
       .equals(categoryType);

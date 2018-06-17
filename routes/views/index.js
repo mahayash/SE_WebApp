@@ -20,7 +20,7 @@ exports = module.exports = async function(req, res) {
 
   // get the list of all student score
   var studentScore = keystone
-    .list("StudentScore")
+    .list("ViewAll")
     .model.find()
     .sort("displayInCategories");
   studentScore.exec(function(err, result1) {

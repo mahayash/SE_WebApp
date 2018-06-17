@@ -51,9 +51,8 @@ keystone.set("routes", require("./routes"));
 
 // Configure the navigation bar in Keystone's Admin UI
 keystone.set("nav", {
-  Home: ["Home","StudentScore", "testimonials"],
+  Home: ["Home","ViewAll", "testimonials"],
   galleries: "galleries",
-  enquiries: "enquiries",
   users: "users",
   forms: ["Feedback", "ClearDoubt", "Complaint"]
 });

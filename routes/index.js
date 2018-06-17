@@ -18,33 +18,32 @@
  * http://expressjs.com/api.html#app.VERB
  */
 
-var keystone = require('keystone');
-var middleware = require('./middleware');
+var keystone = require("keystone");
+var middleware = require("./middleware");
 var importRoutes = keystone.importer(__dirname);
 
 // Common Middleware
-keystone.pre('routes', middleware.initLocals);
-keystone.pre('render', middleware.flashMessages);
+keystone.pre("routes", middleware.initLocals);
+keystone.pre("render", middleware.flashMessages);
 
 // Import Route Controllers
 var routes = {
-	views: importRoutes('./views'),
+  views: importRoutes("./views")
 };
 
 // Setup Route Bindings
-exports = module.exports = function (app) {
-	// Views
-	app.get('/', routes.views.home);
-	//app.get('/career', routes.views.careers); // student can choose their respective career, and study as per that
-	app.get('/online', routes.views.online);
-	app.all('/feedback', routes.views.feedback);
-	app.all('/complaint', routes.views.complaint);
-	app.all('/clearDoubt', routes.views.clearDoubt);
-	app.get('/team', routes.views.team);
-	app.get('/gallery', routes.views.gallery);
-	app.get('/centers', routes.views.centers);
-	app.get('/about', routes.views.about);
-	app.get('/viewall/:category', routes.views.viewall);
-	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
-	// app.get('/protected', middleware.requireUser, routes.views.protected);
+exports = module.exports = function(app) {
+  // Views
+  app.get("/", routes.views.home);
+  app.get("/viewall/:category", routes.views.viewall);
+  app.get("/about", routes.views.about);
+  app.get("/online", routes.views.online);
+  app.all("/feedback", routes.views.feedback);
+  app.all("/complaint", routes.views.complaint);
+  app.all("/clearDoubt", routes.views.clearDoubt);
+  app.get("/gallery", routes.views.gallery);
+  app.get("/centers", routes.views.centers);
+  //app.get('/career', routes.views.careers); // student can choose their respective career, and study as per that
+  // NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
+  // app.get('/protected', middleware.requireUser, routes.views.protected);
 };
