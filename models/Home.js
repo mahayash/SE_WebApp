@@ -37,5 +37,5 @@ Home.add({
   testimonial: { type: Types.Textarea }
 });
 
-Home.defaultColumns = "diplayInCategories,studentName,parentName, testimonial";
+Home.defaultColumns = "displayInCategories,studentName,parentName,testimonial";
 Home.register();

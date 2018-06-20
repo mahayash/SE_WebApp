@@ -18,6 +18,7 @@ exports = module.exports = function(req, res) {
       req.body,
       {
         flashErrors: true,
+        required: "name,phoneNumber,message",
         errorMessage: "There was a problem submitting your feedback:"
       },
       function(err) {
