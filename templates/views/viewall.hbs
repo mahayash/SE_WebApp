@@ -13,35 +13,135 @@
         </table>
     </div>
     <div class="rows">
-        {{#each data.studentInCategory}}
-        <div class="col-xs-12 col-sm-6 col-md-2">
-            <div id="studentCardContainter" style="height:300px">
-                <div class="details" style="height:55px">
-                    {{#if this.highestMarkWithSubjectName}}
-                    <span>{{this.highestMarkWithSubjectName}}
-                    </span>
-                    {{else}}
-                    <span>{{this.percentScored}}% in
-                    </span>
-                    <span>{{this.examination}}</span>
-                    {{/if}}
-                </div>
-                <div>
-                    <img class="img-wrapper rounded" src={{this.studentImagePath}} />
-                </div>
-                <div class="studentInfo">
-                    <div class="studentName">
-                        <span>{{this.studentName.first}}
+        {{#if data.categoryStudentType}} {{#each data.studentInCategory}}
+        <div>
+            <div class="col-xs-12 col-sm-6 col-md-2">
+
+                <div id="studentCardContainter" style="height:300px">
+                    <div class="details">
+                        {{#if this.highestMarkWithSubjectName}}
+                        <span>{{this.highestMarkWithSubjectName}}
                         </span>
-                        <span>{{this.studentName.last}}</span>
+                        {{else}}
+                        <span>{{this.percentScored}}% in
+                        </span>
+                        <span>{{this.examination}}</span>
+                        {{/if}}
                     </div>
-                    <div class="studentSchoolName">
-                        <span>{{this.courseOpted}}</span> -
-                        <span>{{this.school}}</span>
+                    <div>
+                        <img class="img-wrapper rounded" src={{this.studentImagePath}} />
+                    </div>
+                    <div class="studentInfo">
+                        <div class="studentName">
+                            <span>{{this.studentName.first}}
+                            </span>
+                            <span>{{this.studentName.last}}</span>
+                        </div>
+                        <div class="studentSchoolName">
+                            <span>{{this.courseOpted}}</span> -
+                            <span>{{this.school}}</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        {{/each}}
+        {{/each}} {{else}}
+        <div>
+            {{#each data.studentInCategory}}
+            <div class="col-xs-12 col-sm-6 col-md-4">
+
+                <div id="testimonialCardDetails">
+                    <img src={{this.imagePath}} />
+
+                    <div id="testimonailParent">
+                        <span class="titleText">
+                            <span>{{this.parentName.first}}</span>
+                            <span> {{ this.parentName.last }} </span>
+                        </span>
+                        <br/>
+                        <div>
+                            <span class="titleSubText">
+                                {{ this.relationWithStudent }}
+                            </span>
+                            <span class="titleSubText">
+                                of {{ this.studentName.first }}
+                            </span>
+                            <span class="titleSubText">
+                                {{ this.studentName.last }}
+                            </span>
+                        </div>
+                    </div>
+                    <p id="testimonialText">{{this.testimonial}}</p>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        {{/if}}
     </div>
+
 </div>
+</div>
+
+
+{{!-- {{#each data.studentInCategory}}
+<div>
+    {{#if data.categoryStudentType}}
+    <div class="col-xs-12 col-sm-6 col-md-2">
+
+        <div id="studentCardContainter" style="height:300px">
+            <div class="details" style="height:55px">
+                {{#if this.highestMarkWithSubjectName}}
+                <span>{{this.highestMarkWithSubjectName}}
+                </span>
+                {{else}}
+                <span>{{this.percentScored}}% in
+                </span>
+                <span>{{this.examination}}</span>
+                {{/if}}
+            </div>
+            <div>
+                <img class="img-wrapper rounded" src={{this.studentImagePath}} />
+            </div>
+            <div class="studentInfo">
+                <div class="studentName">
+                    <span>{{this.studentName.first}}
+                    </span>
+                    <span>{{this.studentName.last}}</span>
+                </div>
+                <div class="studentSchoolName">
+                    <span>{{this.courseOpted}}</span> -
+                    <span>{{this.school}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{else if data.categoryTestimonialType}}
+    <div class="col-xs-12 col-sm-6 col-md-4">
+
+        <div id="testimonialCardDetails">
+            <img src={{this.imagePath}} />
+
+            <div id="testimonailParent">
+                <span class="titleText">
+                    <span>{{this.parentName.first}}</span>
+                    <span> {{ this.parentName.last }} </span>
+                </span>
+                <br/>
+                <div>
+                    <span class="titleSubText">
+                        {{ this.relationWithStudent }}
+                    </span>
+                    <span class="titleSubText">
+                        of {{ this.studentName.first }}
+                    </span>
+                    <span class="titleSubText">
+                        {{ this.studentName.last }}
+                    </span>
+                </div>
+            </div>
+            <p id="testimonialText">{{this.testimonial}}</p>
+        </div>
+    </div>
+    {{/if}}
+</div>
+{{/each}} --}}

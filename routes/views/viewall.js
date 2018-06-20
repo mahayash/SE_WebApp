@@ -4,7 +4,9 @@ exports = module.exports = function(req, res) {
   let locals = res.locals;
   locals.data = {
     studentInCategory: [],
-    category: []
+    category: [],
+    categoryStudentType: [],
+    categoryTestimonialType: []
   };
 
   let categoryType = parseInt(req.params.category);
@@ -24,6 +26,7 @@ exports = module.exports = function(req, res) {
   }
 
   if (categoryType != 4) {
+    
     let studentInCategoryQuery = keystone
       .list("ViewAll")
       .model.find()
@@ -32,6 +35,7 @@ exports = module.exports = function(req, res) {
 
     studentInCategoryQuery.exec(function(err, result) {
       if (result != null) {
+        locals.data.categoryStudentType = true;
         locals.data.studentInCategory = result;
       } else {
         return res
@@ -40,8 +44,10 @@ exports = module.exports = function(req, res) {
       }
     });
   } else {
+    
     var testimonial = keystone.list("Testimonial").model.find();
     testimonial.exec(function(err, result2) {
+      locals.data.categoryTestimonialType = true;
       locals.data.studentInCategory = result2;
     });
   }
