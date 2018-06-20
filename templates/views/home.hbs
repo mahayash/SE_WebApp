@@ -42,6 +42,42 @@
     <br />
 
     <div style="clear:both">
+        <span class="title">Parent Says</span>
+        <span class="titleRight">
+            <a href="/viewall/4">view all</a>
+        </span>
+        <div class="rows">
+            {{#each data.testimonial}}
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div id="testimonialCardDetails">
+                    <img src={{this.imagePath}} />
+
+                    <div id="testimonailParent">
+                        <span class="titleText">
+                            <span>{{this.parentName.first}}</span>
+                            <span> {{ this.parentName.last }} </span>
+                        </span>
+                        <br/>
+                        <div>
+                            <span class="titleSubText">
+                                {{ this.relationWithStudent }}
+                            </span>
+                            <span class="titleSubText">
+                                of {{ this.studentName.first }}
+                            </span>
+                            <span class="titleSubText">
+                                {{ this.studentName.last }}
+                            </span>
+                        </div>
+                    </div>
+                    <p id="testimonialText">{{this.testimonial}}</p>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+
+    <div style="clear:both">
         <div>
             <span class="title">The Toppers</span>
             <span class="titleRight">
@@ -114,39 +150,5 @@
     </div>
     <br/>
 
-    <div style="clear:both">
-        <span class="title">Parent Says</span>
-        <span class="titleRight">
-            <a href="/viewall/4">view all</a>
-        </span>
-        <div class="rows">
-            {{#each data.testimonial}}
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div id="testimonialCardDetails">
-                    <img src={{this.imagePath}} />
 
-                    <div id="testimonailParent">
-                        <span class="titleText">
-                            <span>{{this.parentName.first}}</span>
-                            <span> {{ this.parentName.last }} </span>
-                        </span>
-                        <br/>
-                        <div>
-                            <span class="titleSubText">
-                                {{ this.relationWithStudent }}
-                            </span>
-                            <span class="titleSubText">
-                                of {{ this.studentName.first }}
-                            </span>
-                            <span class="titleSubText">
-                                {{ this.studentName.last }}
-                            </span>
-                        </div>
-                    </div>
-                    <p id="testimonialText">{{this.testimonial}}</p>
-                </div>
-            </div>
-            {{/each}}
-        </div>
-    </div>
 </div>
