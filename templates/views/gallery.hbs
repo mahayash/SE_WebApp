@@ -1,20 +1,18 @@
 <div class="container">
-	<div class="title" style="margin-top:20px">Life At Square Education in Pics</div>
+	<div class="title" style="margin:20px 0">Life At Square Education in Pics</div>
 	<div class="row">
 		{{#each data.pictures}}
-		<div class="col-xs-12 col-sm-6 col-md-2">
-			<div id="professionalCardContainter">
-				<div style="padding-top: 10px">
-					<img class="imgThumbnail" src={{this.facultyImage}} />
-				</div>
-				<div>
-					<span class="imgCaption">{{this.caption}}</span>
-				</div>
+		<div class="col-xs-12 col-sm-6 col-md-3">
+			<div>
+				<img class="imgThumbnail" src={{this.imageUrl}} style="padding :10px" />
 			</div>
+			{{!--
+			<div style="text-align: center; font-size: 18px;padding:10px;font-weight: 400">
+				<strong class="imgCaption">{{this.title}}</strong>
+			</div> --}}
 		</div>
 		{{/each}}
 	</div>
-
 </div>
 
 

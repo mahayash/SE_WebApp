@@ -3,11 +3,12 @@ var Types = keystone.Field.Types;
 var axios = require("axios");
 
 var Gallery = new keystone.List("Gallery", {
-  autokey: { from: "accessToken", path: "key", unique: true }
+  autokey: { from: "title", path: "key", unique: true }
 });
 
 Gallery.add({
-  accessToken: { type: String },
+  title: { type: String },
+  imageUrl: { type: String },
   publishedDate: { type: Date, default: Date.now }
 });
 

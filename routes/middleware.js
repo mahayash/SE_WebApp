@@ -41,7 +41,7 @@ exports.initLocals = function(req, res, next) {
         // Marks, & that marks will be displayed calculated & displayed on the first page after verification
       ]
     },
-    //{ label: "Gallery", key: "gallery", href: "/gallery" }, //will take the pics from Instagram API
+    { label: "Gallery", key: "gallery", href: "/gallery" },
     { label: "Centers", key: "centers", href: "/centers" }
   ];
   res.locals.user = req.user;
