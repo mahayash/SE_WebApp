@@ -16,8 +16,7 @@ Testimonial.add({
 		initial: true,
 		required: true,
 	},
-	testimonial: { type: Types.Textarea, required: true, initial: true },
-	fromSquareEducation: { type: Types.Textarea, required: true, initial: true },
+	testimonial: { type: Types.Textarea, required: true, initial: true }
 });
 
 Testimonial.defaultColumns = 'parentName, studentName,testimonial';

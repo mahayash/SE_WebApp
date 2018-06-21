@@ -1,5 +1,6 @@
 var keystone = require("keystone");
 var Feedback = keystone.list("Feedback");
+var ClearDoubt = keystone.list("ClearDoubt");
 
 exports = module.exports = function(req, res) {
   var view = new keystone.View(req, res);
@@ -9,6 +10,8 @@ exports = module.exports = function(req, res) {
   locals.formData = req.body || {};
   locals.validationErrors = {};
   locals.feedbackSubmitted = false;
+  locals.courseStudying = ClearDoubt.fields.courseStudying.ops;
+  locals.board = ClearDoubt.fields.board.ops;
 
   view.on("post", { action: "feedback" }, function(next) {
     var newFeedback = new Feedback.model();
@@ -18,7 +21,8 @@ exports = module.exports = function(req, res) {
       req.body,
       {
         flashErrors: true,
-        required: "name,phoneNumber,message",
+        required:
+          "parentName,studentName,standardStudying,board,feekbackMessage",
         errorMessage: "There was a problem submitting your feedback:"
       },
       function(err) {

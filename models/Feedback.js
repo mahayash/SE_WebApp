@@ -7,12 +7,14 @@ var Feedback = new keystone.List("Feedback", {
 });
 
 Feedback.add({
-  name: { type: Types.Name, required: true },
-  phoneNumber: { type: String, require: true },
-  message: { type: Types.Markdown, required: true },
+  parentName: { type: Types.Name, required: true },
+  studentName: { type: Types.Name, required: true },
+  standardStudying: { type: String },
+  board: { type: String },
+  feekbackMessage: { type: Types.Markdown, required: true },
   createdAt: { type: Date, default: Date.now }
 });
 
 Feedback.defaultSort = '-createdAt';
-Feedback.defaultColumns = 'name, phoneNumber, message, createdAt';
+Feedback.defaultColumns = 'parentName, studentName, feekbackMessage, createdAt';
 Feedback.register();

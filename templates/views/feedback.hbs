@@ -1,25 +1,44 @@
 <div class="container">
-    <h1>Feedback</h1>
+    <div class="title" style="margin:20px 0px;">Give your valuable feedback</div>
 </div>
 <div class="container">
     <div class="row">
+        <h1>{{feedbackSubmitted}}</h1>
         <div class="col-sm-8 col-md-6">
             {{#if feedbackSubmitted}}
-            <h2>Thank you very much for the feedback</h2>
+            <h2>Thank you very much for the valuable feedback</h2>
             {{else}}
             <form method="post">
                 <input type="hidden" name="action" value="feedback">
-                <div class="form-group {{#if validationErrors.name}}has-error{{/if}}">
-                    <label>Name</label>
-                    <input type="text" name="name" class="form-control" value="{{formData.name}}">
+                <div class="form-group ">
+                    <label>Parent Name</label>
+                    <input type="text" name="parentName" class="form-control" value="{{formData.parentName}}">
                 </div>
-                <div class="form-group {{#if validationErrors.phoneNumber}}has-error{{/if}}">
-                    <label>Phone</label>
-                    <input type="text" name="phoneNumber" class="form-control" value="{{formData.phoneNumber}}">
+                <div class="form-group {{#if validationErrors.studentName}}has-error{{/if}}">
+                    <label>Student Name</label>
+                    <input type="text" name="studentName" class="form-control" value="{{formData.studentName}}">
                 </div>
-                <div class="form-group {{#if validationErrors.message}}has-error{{/if}} ">
-                    <label>Message</label>
-                    <textarea name="message" placeholder="Leave us a message..." rows="4" class="form-control">{{formData.message}}</textarea>
+                <div class="form-group ">
+                    <label>Course Studying</label>
+                    <select name="courseStudying" class="form-control">
+                        <option value="">(select one)</option>
+                        {{#each courseStudying}}
+                        <option value="{{value}}">{{label}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="form-group ">
+                    <label>Board</label>
+                    <select name="board" class="form-control">
+                        <option value="">(select one)</option>
+                        {{#each board}}
+                        <option value="{{value}}">{{label}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="form-group {{#if validationErrors.feekbackMessage}}has-error{{/if}} ">
+                    <label>Feekback Message</label>
+                    <textarea name="feekbackMessage" placeholder="Write feedback message..." rows="4" class="form-control">{{formData.feekbackMessage}}</textarea>
                 </div>
                 <div class="form-actions">
                     <button type="submit" class="btn btn-primary">Submit</button>
