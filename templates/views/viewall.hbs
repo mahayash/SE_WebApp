@@ -18,15 +18,9 @@
             <div class="col-xs-12 col-sm-6 col-md-2">
 
                 <div id="studentCardContainter" style="height:300px">
-                    <div class="details">
-                        {{#if this.highestMarkWithSubjectName}}
-                        <span>{{this.highestMarkWithSubjectName}}
+                    <div class="details" >
+                        <span>{{this.title}}
                         </span>
-                        {{else}}
-                        <span>{{this.percentScored}}% in
-                        </span>
-                        <span>{{this.examination}}</span>
-                        {{/if}}
                     </div>
                     <div>
                         <img class="img-wrapper rounded" src={{this.studentImagePath}} />

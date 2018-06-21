@@ -19,20 +19,22 @@ ViewAllScore.add({
     index: true,
     initial: true
   },
-  studentName: { type: Types.Name, required: true, initial: true },
+  title: { type: String, required: true, initial: true },
   studentImagePath: { type: String },
+  studentName: { type: Types.Name, required: true, initial: true },
   courseOpted: {
     type: Types.Select,
     options: "10th, 9th, 8th, 7th, 6th, 5th, Grammar",
     initial: true
   },
-  school: { type: String, required: true, initial: true },
-  examination: { type: String, required: true, initial: true },
-  percentScored: { type: Types.Number, required: true, initial: true },
-  studentRank: { type: Types.Number },
-  highestMarkWithSubjectName: {
-    type: String
-  }
+  school: { type: String, required: true, initial: true }
+
+  // examination: { type: String, required: true, initial: true },
+  // percentScored: { type: Types.Number, required: true, initial: true },
+  // studentRank: { type: Types.Number },
+  // highestMarkWithSubjectName: {
+  //   type: String
+  // }
 });
 
 ViewAllScore.defaultColumns = "studentName,std,school,diplayInCategories";
