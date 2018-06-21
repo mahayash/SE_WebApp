@@ -23,10 +23,10 @@ Home.add({
   imagePath: { type: String },
   studentName: { type: Types.Name },
   title: { type: String },
-  courseOpted: {
-    type: Types.Select,
-    options: "10th, 9th, 8th, 7th, 6th, 5th, Grammar"
-  },
+  // courseOpted: {
+  //   type: Types.Select,
+  //   options: "10th, 9th, 8th, 7th, 6th, 5th, Grammar"
+  // },
   school: { type: String },
   studentRank: { type: Types.Number },
   parentName: { type: Types.Name },
