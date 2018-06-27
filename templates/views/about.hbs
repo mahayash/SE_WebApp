@@ -1,5 +1,5 @@
 <div class="container">
-
+    {{#if data.loader}}
     <div style="text-align: center; margin : 20px;font-size:18px">
         <p>Every parents have a dream that their child should score
             <strong>Acche Marks</strong> So Square Education has taken the responsiblities of all the students whose parents dream
@@ -29,7 +29,8 @@
                     <p>{{this.profession}}</p>
                     <strong>Role at Square Education</strong>
                     <p>{{this.roleAtSquareEducation}}</p>
-                    {{!-- <strong>Why Square Education ?</strong>
+                    {{!--
+                    <strong>Why Square Education ?</strong>
                     <div>
                         <a href="#">Watch Video</a>
                     </div> --}}
@@ -73,4 +74,12 @@
         {{/each}}
 
     </div>
+    {{else}}
+    <div class="rows">
+        <div class="center-block" style="margin: 50px;">
+            <div class="loader"></div>
+        </div>
+    </div>
+    {{/if}}
+
 </div>

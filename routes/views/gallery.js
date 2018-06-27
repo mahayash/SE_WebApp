@@ -17,8 +17,12 @@ exports = module.exports = function(req, res) {
     .list("Gallery")
     .model.find()
     .sort("publishedDate");
-  gallery.exec(function(err, result) {
+  view.query("gallery", gallery).then(function(err, result, next) {
+    if (err) return next(err);
+    if (result != null && result.length > 0) {
       locals.data.pictures = result;
+    }
+    next();
   });
 
   //https://jsonplaceholder.typicode.com/users

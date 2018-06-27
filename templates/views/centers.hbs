@@ -1,5 +1,5 @@
-<div class="container" >
-    <br/>
+<div class="container">
+    <br/> {{#if data.loader}}
     <div class="title" style="padding-left: 15px">Our Centers</div>
     <div class="container">
 
@@ -37,4 +37,11 @@
             {{/each}}
         </div>
     </div>
+    {{else}}
+    <div class="rows">
+        <div class="center-block" style="margin: 50px;">
+            <div class="loader"></div>
+        </div>
+    </div>
+    {{/if}}
 </div>

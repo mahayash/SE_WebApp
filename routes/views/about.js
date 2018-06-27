@@ -10,7 +10,8 @@ exports = module.exports = function(req, res) {
 
   locals.data = {
     foundationTeam: [],
-    pillarTeam: []
+    pillarTeam: [],
+    loader: false
   };
 
   // locals.section is used to set the currently selected
@@ -20,22 +21,31 @@ exports = module.exports = function(req, res) {
     .list("About")
     .model.find()
     .sort("team");
-  aboutTeam.exec(function(err, result) {
-    for (let index = 0; index < result.length; index++) {
-      let teamIndex = result[index].team;
-      const element = result[index];
-      if (teamIndex == 0) {
-        foundationTeamVal[foundationIndex] = element;
-        foundationIndex++;
-      } else if (teamIndex == 1) {
-        pillarTeamVal[pillarIndex] = element;
-        pillarIndex++;
-      }
-    }
-  });
 
-  locals.data.pillarTeam = pillarTeamVal;
-  locals.data.foundationTeam = foundationTeamVal;
+  view.query("team", aboutTeam).then(function(err, result, next) {
+    aboutTeam.exec(function(err, result) {
+      if (err) return next(err);
+      if (result != null) {
+        for (let index = 0; index < result.length; index++) {
+          let teamIndex = result[index].team;
+          const element = result[index];
+          if (teamIndex == 0) {
+            foundationTeamVal[foundationIndex] = element;
+            foundationIndex++;
+          } else if (teamIndex == 1) {
+            pillarTeamVal[pillarIndex] = element;
+            pillarIndex++;
+          }
+          locals.data.pillarTeam = pillarTeamVal;
+          locals.data.foundationTeam = foundationTeamVal;
+        }
+        locals.data.loader = true;
+      } else {
+        console.log("error " + err);
+      }
+      next();
+    });
+  });
 
   // TODO Render the view ( use Markdown file)
   view.render("about");

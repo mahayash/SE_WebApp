@@ -26,13 +26,37 @@ exports = module.exports = function(req, res) {
   }
 
   if (categoryType != 4) {
-    
     let studentInCategoryQuery = keystone
       .list("ViewAll")
       .model.find()
       .where("displayInCategories")
       .equals(categoryType);
 
+    view
+      .query("viewAll", studentInCategoryQuery)
+      .then(function(err, result, next) {
+        if (err) return next(err);
+        if (result != null) {
+          locals.data.categoryStudentType = true;
+          locals.data.studentInCategory = result;
+        }
+        next();
+      });
+  } else {
+    var testimonial = keystone.list("Testimonial").model.find();
+    view.query("testimonial", testimonial).then(function(err, result2, next) {
+      if (err) return err;
+      locals.data.categoryTestimonialType = true;
+      locals.data.studentInCategory = result2;
+      next();
+    });
+  }
+
+  // Render the view
+  view.render("viewall");
+};
+
+/*
     studentInCategoryQuery.exec(function(err, result) {
       if (result != null) {
         locals.data.categoryStudentType = true;
@@ -43,15 +67,4 @@ exports = module.exports = function(req, res) {
           .send(keystone.wrapHTMLError("Sorry, no records found"));
       }
     });
-  } else {
-    
-    var testimonial = keystone.list("Testimonial").model.find();
-    testimonial.exec(function(err, result2) {
-      locals.data.categoryTestimonialType = true;
-      locals.data.studentInCategory = result2;
-    });
-  }
-
-  // Render the view
-  view.render("viewall");
-};
+*/
