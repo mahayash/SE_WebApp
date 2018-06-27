@@ -26,7 +26,8 @@ keystone.init({
     helpers: new require("./templates/views/helpers")(),
     extname: ".hbs"
   }).engine,
-
+  "node-sass": "4.5.0",
+  "node-sass-middleware": "0.11.0",
   "auto update": true,
   session: true,
   auth: true,
