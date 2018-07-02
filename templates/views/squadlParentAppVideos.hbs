@@ -1,0 +1,12 @@
+<div class="container">
+    <h1>Sqaudl Tutorials</h1>
+    <div class="rows">
+        {{#each data.parentVideos}}
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div style="padding-top: 10px">
+                <a href={{this.videoUrl}} target="_blank">{{this.videoTitle}}</a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

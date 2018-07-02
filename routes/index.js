@@ -43,6 +43,7 @@ exports = module.exports = function(app) {
   app.all("/clearDoubt", routes.views.clearDoubt);
   app.get("/gallery", routes.views.gallery);
   app.get("/centers", routes.views.centers);
+  app.get("/squadlParentAppVideos", routes.views.squadlParentAppVideos);
   //app.get('/career', routes.views.careers); // student can choose their respective career, and study as per that
   // NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
   // app.get('/protected', middleware.requireUser, routes.views.protected);

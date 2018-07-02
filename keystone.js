@@ -55,7 +55,8 @@ keystone.set("nav", {
   Home: ["Home","ViewAll", "testimonials"],
   galleries: "galleries",
   users: "users",
-  forms: ["Feedback", "ClearDoubt", "Complaint"]
+  forms: ["Feedback", "ClearDoubt", "Complaint"],
+  squadl : ["SquadlParentAppVideos", "SquadlAdminApp"]
 });
 
 // Start Keystone to connect to your database and initialise the web server
