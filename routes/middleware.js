@@ -18,18 +18,20 @@ var _ = require("lodash");
 */
 exports.initLocals = function(req, res, next) {
   res.locals.navLinks = [
-    // { label: 'Courses', key: 'courses', href: '/courses' },
-    { label: "About us", key: "about", href: "/about" },
-    // {
-    //   label: "Students",
-    //   key: "students",
-    //   pages: [
-    //     { label: "Online", subkey: "online", href: "/online" },// Open the Moodle account page login using Squadl Account
-    //     { label: "Careers", subkey: "career", href: "/careers" }, // Choose your career ( mohit mingle book )
-    //     { label: "My Zone", subkey: "myzone", href: "/myzone" }, // notes, pdf, images, blogs
-    //     { label: "After Life", subkey: "afterLife", href: "/afterLife" } // life of Square Education student after SE
-    //   ]
-    // },
+    // { label: 'Courses', key: 'courses', href: '/courses' }, 
+    {
+      label: "Students",
+      key: "students",
+      pages: [
+        {
+          label: "Learning",
+          subkey: "learning",
+          href: "http://online.squadl.com/"
+        } // Open the Moodle account page login using Squadl Account
+        // { label: "Careers", subkey: "career", href: "/careers" }, // Choose your career ( mohit mingle book )
+        // { label: "My Zone", subkey: "myzone", href: "/myzone" }, // notes, pdf, images, blogs
+      ]
+    },
     {
       label: "Forms",
       key: "forms",
@@ -37,17 +39,17 @@ exports.initLocals = function(req, res, next) {
         { label: "Clear Doubt", subkey: "forms", href: "/clearDoubt" },
         { label: "Feedback", subkey: "forms", href: "/feedback" },
         { label: "Complaint", subkey: "forms", href: "/complaint" },
-        //{ label: "Enter Marks", subkey: "enterMarks", href: "/enterMarks" } // student will enter the School
+        { label: "Enter Marks", subkey: "enterMarks", href: "/enterMarks" } // student will enter the School
         // Marks, & that marks will be displayed calculated & displayed on the first page after verification
       ]
     },
     {
       label: "Gallery",
       key: "gallery",
-      href: "https://www.instagram.com/squareeducation.in/",
-      target: "_blank"
+      href: "https://www.instagram.com/squareeducation.in/"
     },
-    { label: "Centers", key: "centers", href: "/centers" }
+    { label: "Centers", key: "centers", href: "/centers" },
+    { label: "About us", key: "about", href: "/about" }
   ];
   res.locals.user = req.user;
   next();
