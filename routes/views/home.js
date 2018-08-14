@@ -47,7 +47,7 @@ exports = module.exports = async function(req, res) {
             }
             break;
           case 1:
-            if (topScorerIndex <= 3) {
+            if (topScorerIndex <= 6) {
               topScore[topScorerIndex] = element;
               topScorerIndex++;
             } else {
@@ -55,7 +55,7 @@ exports = module.exports = async function(req, res) {
             }
             break;
           case 2:
-            if (subjectHighestIndex <= 3) {
+            if (subjectHighestIndex <= 6) {
               subjectHighest[subjectHighestIndex] = element;
               subjectHighestIndex++;
             } else {
@@ -63,7 +63,7 @@ exports = module.exports = async function(req, res) {
             }
             break;
           case 3:
-            if (growthAchievedIndex <= 3) {
+            if (growthAchievedIndex <= 6) {
               growthAchieved[growthAchievedIndex] = element;
               growthAchievedIndex++;
             } else {
