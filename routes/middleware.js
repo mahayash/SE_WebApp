@@ -36,12 +36,17 @@ exports.initLocals = function(req, res, next) {
       pages: [
         { label: "Clear Doubt", subkey: "forms", href: "/clearDoubt" },
         { label: "Feedback", subkey: "forms", href: "/feedback" },
-        { label: "Complaint", subkey: "forms", href: "/complaint" }
-        // { label: "Enter Marks", subkey: "enterMarks", href: "/enterMarks" } // student will enter the School
+        { label: "Complaint", subkey: "forms", href: "/complaint" },
+        //{ label: "Enter Marks", subkey: "enterMarks", href: "/enterMarks" } // student will enter the School
         // Marks, & that marks will be displayed calculated & displayed on the first page after verification
       ]
     },
-    { label: "Gallery", key: "gallery", href: "/gallery" },
+    {
+      label: "Gallery",
+      key: "gallery",
+      href: "https://www.instagram.com/squareeducation.in/",
+      target: "_blank"
+    },
     { label: "Centers", key: "centers", href: "/centers" }
   ];
   res.locals.user = req.user;
