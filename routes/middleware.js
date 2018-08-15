@@ -39,7 +39,7 @@ exports.initLocals = function(req, res, next) {
         { label: "Clear Doubt", subkey: "forms", href: "/clearDoubt" },
         { label: "Feedback", subkey: "forms", href: "/feedback" },
         { label: "Complaint", subkey: "forms", href: "/complaint" },
-        { label: "Enter Marks", subkey: "enterMarks", href: "/enterMarks" } // student will enter the School
+        // { label: "Enter Marks", subkey: "enterMarks", href: "/enterMarks" } // student will enter the School
         // Marks, & that marks will be displayed calculated & displayed on the first page after verification
       ]
     },
