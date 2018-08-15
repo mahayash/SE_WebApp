@@ -18,7 +18,7 @@ var _ = require("lodash");
 */
 exports.initLocals = function(req, res, next) {
   res.locals.navLinks = [
-    // { label: 'Courses', key: 'courses', href: '/courses' }, 
+    // { label: 'Courses', key: 'courses', href: '/courses' },
     {
       label: "Students",
       key: "students",
@@ -38,7 +38,7 @@ exports.initLocals = function(req, res, next) {
       pages: [
         { label: "Clear Doubt", subkey: "forms", href: "/clearDoubt" },
         { label: "Feedback", subkey: "forms", href: "/feedback" },
-        { label: "Complaint", subkey: "forms", href: "/complaint" },
+        { label: "Complaint", subkey: "forms", href: "/complaint" }
         // { label: "Enter Marks", subkey: "enterMarks", href: "/enterMarks" } // student will enter the School
         // Marks, & that marks will be displayed calculated & displayed on the first page after verification
       ]
@@ -46,7 +46,8 @@ exports.initLocals = function(req, res, next) {
     {
       label: "Gallery",
       key: "gallery",
-      href: "https://www.instagram.com/squareeducation.in/"
+      // href: "https://www.instagram.com/squareeducation.in/"
+      href: "https://www.facebook.com/squareEducationInstitute/"
     },
     { label: "Centers", key: "centers", href: "/centers" },
     { label: "About us", key: "about", href: "/about" }
