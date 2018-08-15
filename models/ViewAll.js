@@ -14,7 +14,9 @@ ViewAllScore.add({
     options: [
       { label: "Top Scorer", value: 1 },
       { label: "Subject Highest", value: 2 },
-      { label: "Growth Achieved", value: 3 }
+      { label: "Growth Achieved", value: 3 },
+      { label: "Parent Says", value: 4 }
+
     ],
     index: true,
     initial: true
@@ -28,13 +30,6 @@ ViewAllScore.add({
     initial: true
   },
   school: { type: String, required: true, initial: true }
-
-  // examination: { type: String, required: true, initial: true },
-  // percentScored: { type: Types.Number, required: true, initial: true },
-  // studentRank: { type: Types.Number },
-  // highestMarkWithSubjectName: {
-  //   type: String
-  // }
 });
 
 ViewAllScore.defaultColumns = "studentName,std,school,diplayInCategories";
