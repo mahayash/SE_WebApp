@@ -84,7 +84,7 @@ h3 {
   overflow: hidden;
 }
 
-#testimonialCardDetails img {
+#testimonialCardDetails > img {
   width: 75px;
   height: 75px;
   margin: 15px;

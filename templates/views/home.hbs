@@ -47,7 +47,7 @@
     <div style="clear:both">
         <span class="title">Parent Says</span>
         <span class="titleRight">
-            <a href="/viewall/4" style="display: none">view all</a>
+            <a href="/viewall/4" style="display: block">view all</a>
         </span>
         <div class="rows">
             {{#each data.testimonial}}
@@ -73,7 +73,12 @@
                             </span>
                         </div>
                     </div>
-                    <p id="testimonialText">{{this.testimonial}}</p>
+                    <div>
+                        <p id="testimonialText">
+                            <img src="/images/upper_quote.png" width="10px" height="10px" alt="upper-quote" style="vertical-align:super" />                            {{this.testimonial}}
+                            <img src="/images/lower_quote.png" width="10px" height="10px" alt="lower-quote" style="vertical-align:super" />
+                        </p>
+                    </div>
                 </div>
             </div>
             {{/each}}

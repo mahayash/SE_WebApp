@@ -18,7 +18,7 @@
             <div class="col-xs-12 col-sm-6 col-md-2">
 
                 <div id="studentCardContainter" style="height:300px">
-                    <div class="details" >
+                    <div class="details">
                         <span>{{this.title}}
                         </span>
                     </div>
@@ -65,7 +65,12 @@
                             </span>
                         </div>
                     </div>
-                    <p id="testimonialText">{{this.testimonial}}</p>
+                    <div>
+                        <p id="testimonialText">
+                            <img src="/images/upper_quote.png" style="vertical-align:super" width="10px" height="10px" alt="upper-quote" />                            {{this.testimonial}}
+                            <img src="/images/lower_quote.png" style="vertical-align:super" width="10px" height="10px" alt="lower-quote" />
+                        </p>
+                    </div>
                 </div>
             </div>
             {{/each}}
