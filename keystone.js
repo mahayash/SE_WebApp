@@ -57,7 +57,7 @@ keystone.set("nav", {
   Home: ["Home", "ViewAll", "testimonials"],
   galleries: "galleries",
   users: "users",
-  forms: ["Feedback", "ClearDoubt", "Complaint"],
+  forms: ["Feedback", "ClearDoubt", "Complaint","EnterMarks"],
   squadl: ["SquadlParentAppVideos", "SquadlAdminApp"]
 });
 

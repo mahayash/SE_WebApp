@@ -1,0 +1,313 @@
+<div class="container">
+    <div class="title" style="margin:20px 0px;">Enter Marks</div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8 col-md-6">
+            {{#if enterMarksSubmitted}}
+            <h2>Thank you for submitting your Marks</h2>
+            {{else}}
+            <form method="post">
+                <input type="hidden" name="action" value="enterMarks">
+                <div class="form-group {{#if validationErrors.studentName}}has-error{{/if}}">
+                    <label>Student FullName</label>
+                    <input type="text" name="studentName" class="form-control" value="{{formData.studentName}}">
+                </div>
+                <div class="form-group {{#if validationErrors.phoneNumber}}has-error{{/if}}">
+                    <label>Phone Number</label>
+                    <input type="text" name="phoneNumber" class="form-control" value="{{formData.phoneNumber}}">
+                </div>
+                <div class="form-group {{#if validationErrors.schoolName}}has-error{{/if}}">
+                    <label>School Name</label>
+                    <input type="text" name="schoolName" class="form-control" value="{{formData.schoolName}}">
+                </div>
+                <div class="form-group ">
+                    <label>Board</label>
+                    <select name="board" class="form-control">
+                        <option value="">(select one)</option>
+                        {{#each board}}
+                        <option value="{{value}}">{{label}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="form-group ">
+                    <label>Standard ( std ) </label>
+                    <select name="courseStudying" class="form-control">
+                        <option value="">(select one)</option>
+                        {{#each courseStudying}}
+                        <option value="{{value}}">{{label}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="form-group {{#if validationErrors.examName}}has-error{{/if}}">
+                    <label>Exam Name</label>
+                    <input type="text" name="examName" class="form-control" value="{{formData.examName}}">
+                </div>
+                <div>
+                    <table class="table">
+                        <tr>
+                            <th>
+                                Subject
+                            </th>
+                            <th>
+                                Marks Obtained
+                            </th>
+                            <th>
+                                Total Marks
+                            </th>
+                            <th>
+                                Class Highest
+                            </th>
+                            <th>
+                                Comments
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>English</label>
+                            </td>
+                            <td>
+                                <input type="text" name="english.marksObtained" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%"
+                                    value="{{formData.english.marksObtained}}" placeholder="Marks Obtained">
+                            </td>
+                            <td>
+                                <input type="text" name="english.totalMarks" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%" value="{{formData.english.totalMarks}}"
+                                    placeholder="Total Marks">
+                            </td>
+                            <td>
+                                <input type="text" name="english.classHighest" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%" value="{{formData.english.classHighest}}"
+                                    placeholder="Class Highest">
+                            </td>
+                            <td>
+                                <input type="text" name="english.comments" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%" value="{{formData.english.comments}}"
+                                    placeholder="Comments">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label>Hindi</label>
+                            </td>
+                            <td>
+                                <input type="text" name="hindi.marksObtained" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%" value="{{formData.hindi.marksObtained}}"
+                                    placeholder="Marks Obtained">
+                            </td>
+                            <td>
+                                <input type="text" name="hindi.totalMarks" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%" value="{{formData.hindi.totalMarks}}"
+                                    placeholder="Total Marks">
+                            </td>
+                            <td>
+                                <input type="text" name="hindi.classHighest" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%" value="{{formData.hindi.classHighest}}"
+                                    placeholder="Class Highest">
+                            </td>
+                            <td>
+                                <input type="text" name="hindi.comments" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%" value="{{formData.hindi.comments}}"
+                                    placeholder="Comments">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Marathi</label>
+                            </td>
+                            <td>
+                                <input type="text" name="marathi.marksObtained" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%"
+                                    value="{{formData.marathi.marksObtained}}" placeholder="Marks Obtained">
+                            </td>
+                            <td>
+                                <input type="text" name="marathi.totalMarks" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%" value="{{formData.marathi.totalMarks}}"
+                                    placeholder="Total Marks">
+                            </td>
+                            <td>
+                                <input type="text" name="marathi.classHighest" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%" value="{{formData.marathi.classHighest}}"
+                                    placeholder="Class Highest">
+                            </td>
+                            <td>
+                                <input type="text" name="marathi.comments" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%" value="{{formData.marathi.comments}}"
+                                    placeholder="Comments">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>History</label>
+                            </td>
+                            <td>
+                                <input type="text" name="history.marksObtained" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%"
+                                    value="{{formData.history.marksObtained}}" placeholder="Marks Obtained">
+                            </td>
+                            <td>
+                                <input type="text" name="history.totalMarks" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%" value="{{formData.history.totalMarks}}"
+                                    placeholder="Total Marks">
+                            </td>
+                            <td>
+                                <input type="text" name="history.classHighest" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%" value="{{formData.history.classHighest}}"
+                                    placeholder="Class Highest">
+                            </td>
+                            <td>
+                                <input type="text" name="history.comments" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%" value="{{formData.history.comments}}"
+                                    placeholder="Comments">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Geography</label>
+                            </td>
+                            <td>
+                                <input type="text" name="geography.marksObtained" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%"
+                                    value="{{formData.geography.marksObtained}}" placeholder="Marks Obtained">
+                            </td>
+                            <td>
+                                <input type="text" name="geography.totalMarks" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%" value="{{formData.geography.totalMarks}}"
+                                    placeholder="Total Marks">
+                            </td>
+                            <td>
+                                <input type="text" name="geography.classHighest" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%"
+                                    value="{{formData.geography.classHighest}}" placeholder="Class Highest">
+                            </td>
+                            <td>
+                                <input type="text" name="geography.comments" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%" value="{{formData.geography.comments}}"
+                                    placeholder="Comments">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Maths</label></br>
+                                <span style="font-size: 12px">(below 8th)</span>
+                            </td>
+                            <td>
+                                <input type="text" name="maths.marksObtained" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%" value="{{formData.maths.marksObtained}}"
+                                    placeholder="Marks Obtained">
+                            </td>
+                            <td>
+                                <input type="text" name="maths.totalMarks" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%" value="{{formData.maths.totalMarks}}"
+                                    placeholder="Total Marks">
+                            </td>
+                            <td>
+                                <input type="text" name="maths.classHighest" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%" value="{{formData.maths.classHighest}}"
+                                    placeholder="Class Highest">
+                            </td>
+                            <td>
+                                <input type="text" name="maths.comments" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%" value="{{formData.maths.comments}}"
+                                    placeholder="Comments">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Algebra</label></br>
+                                <span style="font-size: 12px">(for 9th-10th)</span>
+                            </td>
+                            <td>
+                                <input type="text" name="algebra.marksObtained" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%"
+                                    value="{{formData.algebra.marksObtained}}" placeholder="Marks Obtained">
+                            </td>
+                            <td>
+                                <input type="text" name="algebra.totalMarks" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%" value="{{formData.algebra.totalMarks}}"
+                                    placeholder="Total Marks">
+                            </td>
+                            <td>
+                                <input type="text" name="algebra.classHighest" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%" value="{{formData.algebra.classHighest}}"
+                                    placeholder="Class Highest">
+                            </td>
+                            <td>
+                                <input type="text" name="algebra.comments" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%" value="{{formData.algebra.comments}}"
+                                    placeholder="Comments">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Geometry</label></br>
+                                <span style="font-size: 12px">(for 9th-10th)</span>
+                            </td>
+                            <td>
+                                <input type="text" name="geometry.marksObtained" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%"
+                                    value="{{formData.geometry.marksObtained}}" placeholder="Marks Obtained">
+                            </td>
+                            <td>
+                                <input type="text" name="geometry.totalMarks" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%" value="{{formData.geometry.totalMarks}}"
+                                    placeholder="Total Marks">
+                            </td>
+                            <td>
+                                <input type="text" name="geometry.classHighest" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%"
+                                    value="{{formData.geometry.classHighest}}" placeholder="Class Highest">
+                            </td>
+                            <td>
+                                <input type="text" name="geometry.comments" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%" value="{{formData.geometry.comments}}"
+                                    placeholder="Comments">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Science</label></br>
+                                <span style="font-size: 12px">(below 8th)</span>
+                            </td>
+                            <td>
+                                <input type="text" name="science.marksObtained" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%"
+                                    value="{{formData.science.marksObtained}}" placeholder="Marks Obtained">
+                            </td>
+                            <td>
+                                <input type="text" name="science.totalMarks" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%" value="{{formData.science.totalMarks}}"
+                                    placeholder="Total Marks">
+                            </td>
+                            <td>
+                                <input type="text" name="science.classHighest" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%" value="{{formData.science.classHighest}}"
+                                    placeholder="Class Highest">
+                            </td>
+                            <td>
+                                <input type="text" name="science.comments" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%" value="{{formData.science.comments}}"
+                                    placeholder="Comments">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Science 1</label></br>
+                                <span style="font-size: 12px">(9th - 10th)</span>
+                            </td>
+                            <td>
+                                <input type="text" name="science1.marksObtained" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%"
+                                    value="{{formData.science1.marksObtained}}" placeholder="Marks Obtained">
+                            </td>
+                            <td>
+                                <input type="text" name="science1.totalMarks" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%" value="{{formData.science1.totalMarks}}"
+                                    placeholder="Total Marks">
+                            </td>
+                            <td>
+                                <input type="text" name="science1.classHighest" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%"
+                                    value="{{formData.science1.classHighest}}" placeholder="Class Highest">
+                            </td>
+                            <td>
+                                <input type="text" name="science1.comments" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%" value="{{formData.science1.comments}}"
+                                    placeholder="Comments">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Science 2</label></br>
+                                <span style="font-size: 12px">(9th - 10th)</span>
+                            </td>
+                            <td>
+                                <input type="text" name="science2.marksObtained" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%"
+                                    value="{{formData.science2.marksObtained}}" placeholder="Marks Obtained">
+                            </td>
+                            <td>
+                                <input type="text" name="science2.totalMarks" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%" value="{{formData.science2.totalMarks}}"
+                                    placeholder="Total Marks">
+                            </td>
+                            <td>
+                                <input type="text" name="science2.classHighest" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%"
+                                    value="{{formData.science2.classHighest}}" placeholder="Class Highest">
+                            </td>
+                            <td>
+                                <input type="text" name="science2.comments" style="padding: 5px;border-radius:4px; border:1px solid #ccc" width="0%" value="{{formData.science2.comments}}"
+                                    placeholder="Comments">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+
+            </form>
+            {{/if}}
+        </div>
+    </div>
+</div>

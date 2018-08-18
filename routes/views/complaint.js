@@ -39,3 +39,5 @@ exports = module.exports = function(req, res) {
   });
   view.render("complaint");
 };
+
+//NOTE : mention the file path in routes/index.js file as well

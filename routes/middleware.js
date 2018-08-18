@@ -24,8 +24,8 @@ exports.initLocals = function(req, res, next) {
       key: "students",
       pages: [
         {
-          label: "Learning",
-          subkey: "learning",
+          label: "Practise",
+          subkey: "Practise",
           href: "http://online.squadl.com/"
         } // Open the Moodle account page login using Squadl Account
         // { label: "Careers", subkey: "career", href: "/careers" }, // Choose your career ( mohit mingle book )
@@ -38,9 +38,8 @@ exports.initLocals = function(req, res, next) {
       pages: [
         { label: "Clear Doubt", subkey: "forms", href: "/clearDoubt" },
         { label: "Feedback", subkey: "forms", href: "/feedback" },
-        { label: "Complaint", subkey: "forms", href: "/complaint" }
-        // { label: "Enter Marks", subkey: "enterMarks", href: "/enterMarks" } // student will enter the School
-        // Marks, & that marks will be displayed calculated & displayed on the first page after verification
+        { label: "Complaint", subkey: "forms", href: "/complaint" },
+        { label: "Enter Marks", subkey: "enterMarks", href: "/enterMarks" } // this divert to routes/index.js page
       ]
     },
     {

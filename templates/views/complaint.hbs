@@ -18,19 +18,19 @@
                     <input type="text" name="phoneNumber" class="form-control" value="{{formData.phoneNumber}}">
                 </div>
                 <div class="form-group ">
-                    <label>Course Studying</label>
-                    <select name="courseStudying" class="form-control">
+                    <label>Board</label>
+                    <select name="board" class="form-control">
                         <option value="">(select one)</option>
-                        {{#each courseStudying}}
+                        {{#each board}}
                         <option value="{{value}}">{{label}}</option>
                         {{/each}}
                     </select>
                 </div>
                 <div class="form-group ">
-                    <label>Board</label>
-                    <select name="board" class="form-control">
+                    <label>Course Studying</label>
+                    <select name="courseStudying" class="form-control">
                         <option value="">(select one)</option>
-                        {{#each board}}
+                        {{#each courseStudying}}
                         <option value="{{value}}">{{label}}</option>
                         {{/each}}
                     </select>
@@ -41,8 +41,8 @@
                     <textarea name="describeComplaint" placeholder="Write your complain here ..." rows="4" class="form-control">{{formData.describeComplaint}}</textarea>
                 </div>
                 <div class="form-group {{#if validationErrors.attemptToResolve}}has-error{{/if}} ">
-                    <label>What attempts have you made to resolve this complaint up to now? Please state who you contacted and what
-                        transpired.
+                    <label>What attempts have you made to resolve this complaint up to now? Please state who you contacted
+                        and what transpired.
                     </label>
                     <textarea name="attemptToResolve" placeholder="Write your attempt to resolve your complain here ..." rows="4" class="form-control">{{formData.attemptToResolve}}</textarea>
                 </div>
