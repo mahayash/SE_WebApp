@@ -19,18 +19,23 @@ var _ = require("lodash");
 exports.initLocals = function(req, res, next) {
   res.locals.navLinks = [
     // { label: 'Courses', key: 'courses', href: '/courses' },
+    // {
+    //   label: "Students",
+    //   key: "students",
+    //   pages: [
+    //     {
+    //       label: "Practise",
+    //       subkey: "Practise",
+    //       href: "http://online.squadl.com/"
+    //     } // Open the Moodle account page login using Squadl Account
+    //     // { label: "Careers", subkey: "career", href: "/careers" }, // Choose your career ( mohit mingle book )
+    //     // { label: "My Zone", subkey: "myzone", href: "/myzone" }, // notes, pdf, images, blogs
+    //   ]
+    // },
     {
-      label: "Students",
-      key: "students",
-      pages: [
-        {
-          label: "Practise",
-          subkey: "Practise",
-          href: "http://online.squadl.com/"
-        } // Open the Moodle account page login using Squadl Account
-        // { label: "Careers", subkey: "career", href: "/careers" }, // Choose your career ( mohit mingle book )
-        // { label: "My Zone", subkey: "myzone", href: "/myzone" }, // notes, pdf, images, blogs
-      ]
+      label: "eLearning",
+      key: "eLearning",
+      href: "http://elearning.squareeducation.in/"
     },
     {
       label: "Forms",
