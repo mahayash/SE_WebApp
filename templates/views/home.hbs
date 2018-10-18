@@ -4,131 +4,13 @@
         <img src={{this.imagePath}} /> {{/each}}
     </div>
 
-    <div style="clear:both">
-        <div>
-            <span class="title">Achievers</span>
-            <span class="titleRight">
-                <a href="/viewall/3" style="display: none">view all</a>
-            </span>
-        </div>
-        <div class="rows">
-            {{#each data.growthAchieved}}
-            <div class="col-xs-6 col-sm-4 col-md-2">
-                <div id="studentCardContainter">
-                    <div class="details">
-                        <div>{{this.title}}
-                        </div>
-                        <div style="font-weight: 400">{{this.subTitle}}
-                        </div>
-                    </div>
-                    <div>
-                        <img class="img-wrapper rounded" src={{this.imagePath}} />
-                    </div>
-                    <div class="studentInfo">
-                        <div class="studentName">
-                            <span>{{this.studentName.first}}
-                            </span>
-                            <span>{{this.studentName.last}}</span>
-                        </div>
-                        <div class="studentSchoolName">
-                            {{!--
-                            <span>{{this.courseOpted}}</span> - --}}
-                            <span>{{this.school}}</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {{/each}}
-        </div>
-    </div>
-    <br />
 
-
-    <div style="clear:both">
-        <span class="title">Parent Says</span>
-        <span class="titleRight">
-            <a href="/viewall/4" style="display: block">view all</a>
-        </span>
-        <div class="rows">
-            {{#each data.testimonial}}
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div id="testimonialCardDetails">
-                    <img src={{this.imagePath}} />
-
-                    <div id="testimonailParent">
-                        <span class="titleText">
-                            <span>{{this.parentName.first}}</span>
-                            <span> {{ this.parentName.last }} </span>
-                        </span>
-                        <br/>
-                        <div>
-                            <span class="titleSubText">
-                                {{ this.relationWithStudent }}
-                            </span>
-                            <span class="titleSubText">
-                                of {{ this.studentName.first }}
-                            </span>
-                            <span class="titleSubText">
-                                {{ this.studentName.last }}
-                            </span>
-                        </div>
-                    </div>
-                    <div>
-                        <blockquote id="testimonialText">
-                            {{this.testimonial}}
-                        </blockquote>
-                    </div>
-                </div>
-            </div>
-            {{/each}}
-        </div>
-    </div>
-    <br />
-
-    <div style="clear:both">
-        <div>
-            <span class="title">Toppers</span>
-            <span class="titleRight">
-                <a href="/viewall/1" style="display: none">view all</a>
-            </span>
-        </div>
-        <div class="rows">
-            {{#each data.topScore}}
-            <div class="col-xs-6 col-sm-4 col-md-2">
-                <div id="studentCardContainter">
-                    <div class="details">
-                        <div>{{this.title}}
-                        </div>
-                        <div style="font-weight: 400">{{this.subTitle}}
-                        </div>
-                    </div>
-                    <div>
-                        <img class="img-wrapper rounded" src={{this.imagePath}} />
-                    </div>
-                    <div class="studentInfo">
-                        <div class="studentName">
-                            <span>{{this.studentName.first}}
-                            </span>
-                            <span>{{this.studentName.last}}</span>
-                        </div>
-                        <div class="studentSchoolName">
-                            {{!--
-                            <span>{{this.courseOpted}}</span> - --}}
-                            <span>{{this.school}}</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {{/each}}
-        </div>
-    </div>
-    <br/>
-
+    {{!-- Highest --}}
     <div style="clear:both">
         <div>
             <span class="title">Highest</span>
             <span class="titleRight">
-                <a href="/viewall/2" style="display: none">view all</a>
+                <a href="/viewall/2">view all</a>
             </span>
         </div>
         <div class="rows">
@@ -162,6 +44,130 @@
         </div>
 
     </div>
-    <br/>
+    <br />
+
+
+    {{!-- Parent says --}}
+    <div style="clear:both">
+        <span class="title">Parent Says</span>
+        <span class="titleRight">
+            <a href="/viewall/4" style="display: block">view all</a>
+        </span>
+        <div class="rows">
+            {{#each data.testimonial}}
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div id="testimonialCardDetails">
+                    <img src={{this.imagePath}} />
+
+                    <div id="testimonailParent">
+                        <span class="titleText">
+                            <span>{{this.parentName.first}}</span>
+                            <span> {{ this.parentName.last }} </span>
+                        </span>
+                        <br />
+                        <div>
+                            <span class="titleSubText">
+                                {{ this.relationWithStudent }}
+                            </span>
+                            <span class="titleSubText">
+                                of {{ this.studentName.first }}
+                            </span>
+                            <span class="titleSubText">
+                                {{ this.studentName.last }}
+                            </span>
+                        </div>
+                    </div>
+                    <div>
+                        <blockquote id="testimonialText">
+                            {{this.testimonial}}
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    <br />
+
+    {{!-- Toppers --}}
+    <div style="clear:both">
+        <div>
+            <span class="title">Toppers</span>
+            <span class="titleRight">
+                <a href="/viewall/1">view all</a>
+            </span>
+        </div>
+        <div class="rows">
+            {{#each data.topScore}}
+            <div class="col-xs-6 col-sm-4 col-md-2">
+                <div id="studentCardContainter">
+                    <div class="details">
+                        <div>{{this.title}}
+                        </div>
+                        <div style="font-weight: 400">{{this.subTitle}}
+                        </div>
+                    </div>
+                    <div>
+                        <img class="img-wrapper rounded" src={{this.imagePath}} />
+                    </div>
+                    <div class="studentInfo">
+                        <div class="studentName">
+                            <span>{{this.studentName.first}}
+                            </span>
+                            <span>{{this.studentName.last}}</span>
+                        </div>
+                        <div class="studentSchoolName">
+                            {{!--
+                            <span>{{this.courseOpted}}</span> - --}}
+                            <span>{{this.school}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    <br />
+
+
+    {{!-- Achiever --}}
+    <div style="clear:both">
+        <div>
+            <span class="title">Achievers</span>
+            <span class="titleRight">
+                <a href="/viewall/3">view all</a>
+            </span>
+        </div>
+        <div class="rows">
+            {{#each data.growthAchieved}}
+            <div class="col-xs-6 col-sm-4 col-md-2">
+                <div id="studentCardContainter">
+                    <div class="details">
+                        <div>{{this.title}}
+                        </div>
+                        <div style="font-weight: 400">{{this.subTitle}}
+                        </div>
+                    </div>
+                    <div>
+                        <img class="img-wrapper rounded" src={{this.imagePath}} />
+                    </div>
+                    <div class="studentInfo">
+                        <div class="studentName">
+                            <span>{{this.studentName.first}}
+                            </span>
+                            <span>{{this.studentName.last}}</span>
+                        </div>
+                        <div class="studentSchoolName">
+                            {{!--
+                            <span>{{this.courseOpted}}</span> - --}}
+                            <span>{{this.school}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    <br />
 
 </div>
