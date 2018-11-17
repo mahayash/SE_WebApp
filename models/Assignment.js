@@ -1,15 +1,23 @@
 var Keystone = require("keystone");
 var Types = Keystone.Field.Types;
+var Handlebars = require("handlebars");
+var MomentHandler = require("handlebars.moment");
+MomentHandler.registerHelpers(Handlebars);
 
 var Assignment = new Keystone.List("Assignment", {
   label: "Assignment",
   autokey: { from: "Assigment", path: "key", unique: true },
-  defaultSort: '-Date'
+  defaultSort: "-Date"
 });
 
 Assignment.add({
   Name: { type: String, required: true, initial: true },
-  Date: { type: Types.Datetime, default: Date.now, utc: false ,format: 'DD-MM-YYYY'},
+  Date: {
+    type: Types.Datetime,
+    default: Date.now,
+    utc: false,
+    format: "DD-MM-YYYY"
+  },
   Subject: {
     type: Types.Select,
     options: [
