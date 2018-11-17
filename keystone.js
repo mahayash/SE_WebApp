@@ -58,7 +58,8 @@ keystone.set("nav", {
   galleries: "galleries",
   users: "users",
   forms: ["Feedback", "ClearDoubt", "Complaint","EnterMarks"],
-  squadl: ["SquadlParentAppVideos", "SquadlAdminApp"]
+  squadl: ["SquadlParentAppVideos", "SquadlAdminApp"],
+  assignment: ["Assignment"]
 });
 
 // Start Keystone to connect to your database and initialise the web server

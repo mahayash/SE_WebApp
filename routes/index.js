@@ -45,6 +45,7 @@ exports = module.exports = function(app) {
   app.get("/centers", routes.views.centers);
   app.all("/enterMarks", routes.views.enterMarks); // redirected to routes/view/enterMarks
   app.get("/squadlParentAppVideos", routes.views.squadlParentAppVideos);
+  app.get("/answerpaper",routes.views.assignment);
   //app.get('/career', routes.views.careers); // student can choose their respective career, and study as per that
   // NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 };
