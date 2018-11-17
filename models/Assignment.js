@@ -21,18 +21,18 @@ Assignment.add({
   Subject: {
     type: Types.Select,
     options: [
-      { value: "1", label: "English" },
-      { value: "2", label: "Hindi" },
-      { value: "3", label: "Marathi" },
-      { value: "4", label: "Algebra" },
-      { value: "5", label: "Geometry" },
-      { value: "6", label: "Science-1" },
-      { value: "7", label: "Science-2" },
-      { value: "8", label: "History & PS" },
-      { value: "9", label: "Geography" },
-      { value: "10", label: "English Grammar" },
-      { value: "11", label: "Hindi Grammar" },
-      { value: "12", label: "Marathi Grammar" }
+      { value: "English", label: "English" },
+      { value: "Hindi", label: "Hindi" },
+      { value: "Marathi", label: "Marathi" },
+      { value: "Algebra", label: "Algebra" },
+      { value: "Geometry", label: "Geometry" },
+      { value: "Science-1", label: "Science-1" },
+      { value: "Science-2", label: "Science-2" },
+      { value: "History & PS", label: "History & PS" },
+      { value: "Geography", label: "Geography" },
+      { value: "English Grammar", label: "English Grammar" },
+      { value: "Hindi Grammar", label: "Hindi Grammar" },
+      { value: "Marathi Grammar", label: "Marathi Grammar" }
     ]
   },
   ChapterNo: { type: String },

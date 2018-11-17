@@ -29,8 +29,8 @@ exports.initLocals = function(req, res, next) {
           href: "http://elearning.squareeducation.in/"
         },
         {
-          label: "Answer Paper",
-          subkey: "Answer Paper",
+          label: "10th std Answer Paper",
+          subkey: "10th std Answer Paper",
           href: "/answerPaper"
         } // Open the Moodle account page login using Squadl Account
         // { label: "Careers", subkey: "career", href: "/careers" }, // Choose your career ( mohit mingle book )

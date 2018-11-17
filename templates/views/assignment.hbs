@@ -6,9 +6,11 @@
 			<ul>
 				<li>
 					<h4>{{this.Name}}</h4>
-					<h5>Chapter(s) : {{this.ChapterNo}}</h5>
-					<p>{{moment this.Date 'DD-MM-YYYY'}}</p>
-					<a href={{this.AnswerLink}} target="_blank">Show Answer Paper</a>
+					<p><strong>Subject : </strong> <span> {{this.Subject}} </span></p>
+					<p><strong>Chapter(s) : </strong> <span> {{this.ChapterNo}} </span></p>
+					<p><strong>Answers publish on : </strong>
+						<span>{{moment this.Date 'DD-MM-YYYY'}}</span> </p>
+					<p><a href={{this.AnswerLink}} target="_blank">Click to view Answer Paper</a></p>
 					<hr />
 				</li>
 			</ul>
