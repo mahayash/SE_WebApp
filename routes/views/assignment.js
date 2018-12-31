@@ -7,7 +7,7 @@ exports = module.exports = function(req, res) {
   locals.data = {
     result: []
   };
-
+  locals.section = "answerpaper";
   var Assignment = keystone
     .list("Assignment")
     .model.find()

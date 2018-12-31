@@ -20,41 +20,56 @@ exports.initLocals = function(req, res, next) {
   res.locals.navLinks = [
     // { label: 'Courses', key: 'courses', href: '/courses' },
     {
-      label: "Students",
-      key: "students",
-      pages: [
-        {
-          label: "eLearning",
-          subkey: "eLearning",
-          href: "http://elearning.squareeducation.in/"
-        },
-        {
-          label: "10th std Answer Paper",
-          subkey: "10th std Answer Paper",
-          href: "/answerPaper"
-        } // Open the Moodle account page login using Squadl Account
-        // { label: "Careers", subkey: "career", href: "/careers" }, // Choose your career ( mohit mingle book )
-        // { label: "My Zone", subkey: "myzone", href: "/myzone" }, // notes, pdf, images, blogs
-      ]
+      label: "10th Model Paper",
+      subkey: "10th Model Paper",
+      href: "/answerPaper"
     },
     {
-      label: "Forms",
-      key: "forms",
-      pages: [
-        { label: "Clear Doubt", subkey: "forms", href: "/clearDoubt" },
-        { label: "Feedback", subkey: "forms", href: "/feedback" },
-        { label: "Complaint", subkey: "forms", href: "/complaint" },
-        { label: "Enter Marks", subkey: "enterMarks", href: "/enterMarks" } // this divert to routes/index.js page
-      ]
+      label: "eLearning",
+      subkey: "eLearning",
+      href: "http://elearning.squareeducation.in/"
     },
     {
-      label: "Gallery",
-      key: "gallery",
-      // href: "https://www.instagram.com/squareeducation.in/"
-      href: "https://www.facebook.com/squareEducationInstitute/"
-    },
-    { label: "Centers", key: "centers", href: "/centers" },
-    { label: "About us", key: "about", href: "/about" }
+      label: "Online Test",
+      subkey: "onlineTest",
+      href: "http://online.squadl.com/"
+    }
+    // {
+    //   label: "Students",
+    //   key: "students",
+    //   pages: [
+    //     {
+    //       label: "eLearning",
+    //       subkey: "eLearning",
+    //       href: "http://elearning.squareeducation.in/"
+    //     },
+    //     {
+    //       label: "10th std Answer Paper",
+    //       subkey: "10th std Answer Paper",
+    //       href: "/answerPaper"
+    //     } // Open the Moodle account page login using Squadl Account
+    //     // { label: "Careers", subkey: "career", href: "/careers" }, // Choose your career ( mohit mingle book )
+    //     // { label: "My Zone", subkey: "myzone", href: "/myzone" }, // notes, pdf, images, blogs
+    //   ]
+    // },
+    // {
+    //   label: "Forms",
+    //   key: "forms",
+    //   pages: [
+    //     { label: "Clear Doubt", subkey: "forms", href: "/clearDoubt" },
+    //     { label: "Feedback", subkey: "forms", href: "/feedback" },
+    //     { label: "Complaint", subkey: "forms", href: "/complaint" },
+    //     { label: "Enter Marks", subkey: "enterMarks", href: "/enterMarks" } // this divert to routes/index.js page
+    //   ]
+    // },
+    // {
+    //   label: "Gallery",
+    //   key: "gallery",
+    //   // href: "https://www.instagram.com/squareeducation.in/"
+    //   href: "https://www.facebook.com/squareEducationInstitute/"
+    // },
+    // { label: "Centers", key: "centers", href: "/centers" },
+    // { label: "About us", key: "about", href: "/about" }
   ];
   res.locals.user = req.user;
   next();
